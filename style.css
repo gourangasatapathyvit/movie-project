@@ -109,14 +109,23 @@ body {
 
 .card-container{
     padding: 20px 40px;
-    border: 1px solid red;
+    /* border: 3px dotted red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card-box{
     height: max-content;
     max-width: 250px;
     position: relative;
+    margin-right: 60px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    
 }
+
+
 
 .card-box>h1{
     font-family: 'Chivo Mono', monospace;
@@ -132,7 +141,7 @@ body {
 }
 .card-info{
     padding: 20px;
-    padding-left: 0;
+    padding-left: 8px;
 }
 
 .card-info>h3{
@@ -148,17 +157,20 @@ body {
 }
 
 .card-main-footer{
-    background-color: rgba(0,0,0,.03);
-    border-top: 2px solid rgba(0,0,0,.125);
+    /* background-color: rgba(0,0,0,.03); */
+    border-end-end-radius: 8px;
 }
 
 .card-footer{
     display: flex;
     justify-content: space-between;
+    padding: 5px;
 }
 
 
 /*Button Style CSS */
+
+
 .button-11 {
     display: flex;
     flex-direction: column;
@@ -174,6 +186,10 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
     transition: all 0.3s ease-in-out;
+}
+
+.card-footer-button{
+    border: 1px solid black;
 }
 
 .button-11:hover {
