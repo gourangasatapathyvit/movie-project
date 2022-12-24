@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Lora&family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400&family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400&family=Noto+Sans&family=Open+Sans:wght@500&display=swap');
 
 * {
     box-sizing: border-box;
@@ -144,6 +144,12 @@ body {
     border-radius: 8px 8px 0px 0px;
 }
 
+.list-card-image {
+    max-width: 100px;
+    display: block;
+    height: auto;
+}
+
 .card-info {
     padding: 20px;
     padding-left: 8px;
@@ -172,6 +178,25 @@ body {
     padding: 5px;
 }
 
+
+.list-box {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.list-box>h3 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2rem;
+}
+
+
+.list-button {
+    margin: 0 5px;
+}
 
 /*Button Style CSS */
 
