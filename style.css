@@ -10,11 +10,11 @@
 }
 
 body {
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .container {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
 }
 
 .navbar {
@@ -176,6 +176,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+}
+
+.card-footer>a{
+    text-decoration: none;
 }
 
 
