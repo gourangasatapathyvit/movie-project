@@ -40,16 +40,36 @@
         </section>
 
         <section class="card-container">
-            {{#each movieData}}
-            <div class="card-box">
-                <h1 oncopy="return false" oncut="return false">{{this.first_air_date}}</h1>
-                <img class="card-image" src="https://image.tmdb.org/t/p/original{{this.poster_path}}"
-                    alt="{{this.id}}">
-                <div class="card-main-footer">
-                    <div class="card-info">
-                        <h3>{{this.name}}</h3>
-                    </div>
+            <div class="card-box-container">
+                {{#each movieData}}
+                <div class="card-box">
+                    <h1 oncopy="return false" oncut="return false">{{this.first_air_date}}</h1>
+                    <img class="card-image" src="https://image.tmdb.org/t/p/original{{this.poster_path}}"
+                        alt="{{this.id}}">
+                    <div class="card-main-footer">
+                        <div class="card-info">
+                            <h3>{{this.name}}</h3>
+                        </div>
 
+                        <div class="card-footer">
+                            <a href="more-info/{{this.id}}">
+                                <button class="button-11 card-footer-button" id="more-info">More Info</button>
+                            </a>
+
+                            <a href="more-info/moreInfo.html">
+                                <button class="button-11 card-footer-button" id="fav-info">Watch Later</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+
+            <div class="list-box-container">
+                {{#each movieData}}
+                <div class="list-box">
+                    <h3>{{this.name}}</h3>
                     <div class="card-footer">
                         <a href="more-info/{{this.id}}">
                             <button class="button-11 card-footer-button" id="more-info">More Info</button>
@@ -60,21 +80,15 @@
                         </a>
                     </div>
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
 
-
-            <div class="list-box">
-                <h3>Card Title</h3>
-                <div class="card-footer">
-                    <button class="button-11 card-footer-button list-button" id="more-info">More Info</button>
-                    <button class="button-11 card-footer-button list-button" id="fav-info">Watch Later</button>
-                </div>
-            </div>
 
         </section>
 
     </div>
+
+    <script src="/static/js/script.js"></script>
 
 
 </body>
