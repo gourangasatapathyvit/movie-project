@@ -11,7 +11,7 @@
     <title>Movi-Hub</title>
 </head>
 
-<body>
+<body ondragstart="return false;" ondrop="return false" oncopy="return false" oncut="return false">
     <div class="container">
         <nav class="navbar">
             <header class="__header">Hub</header>
@@ -43,7 +43,7 @@
             <div class="card-box-container">
                 {{#each movieData}}
                 <div class="card-box">
-                    <h1 oncopy="return false" oncut="return false">{{this.first_air_date}}</h1>
+                    <h1>{{this.first_air_date}}</h1>
                     <img class="card-image" src="https://image.tmdb.org/t/p/original{{this.poster_path}}"
                         alt="{{this.id}}">
                     <div class="card-main-footer">
