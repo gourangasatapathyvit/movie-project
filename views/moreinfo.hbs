@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/moreInfo.css">
+    <title>Movi-Hub</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <header class="__header">Hub</header>
+            <ul class="nav__option">
+                <li class="option">Home</li>
+                <li class="option">Movies</li>
+                <li class="option">Series</li>
+                <li class="option">Watch Later</li>
+                <li class="option">About</li>
+            </ul>
+
+            <div class="search-section">
+                <form id="search" class="form-inline">
+                    <input type="text" class="form-control" id="search-input" placeholder="Search Here">
+                    <button class="button-11" role="button">Search</button>
+                </form>
+            </div>
+
+        </nav>
+
+        <section class="info-section">
+            <div class="image-container">
+                <span class="material-symbols-outlined">bookmark_add</span>
+                <span class="material-symbols-outlined">bookmark_added</span>
+                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                    alt="img">
+            </div>
+
+            <div class="movie-info">
+                <h1>{{movieResultData.name}}</h1>
+                <h3>Director</h3>
+                <h3>Stars</h3>
+                <h3>{{movieResultData.origin_country.[0]}}</h3>
+            </div>
+
+        </section>
+
+        <section class="info-image-quality">
+            <div class="image-container">
+                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                    alt="img">
+            </div>
+            <div class="image-container">
+                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                    alt="img">
+            </div>
+            <div class="image-container">
+                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                    alt="img">
+            </div>
+        </section>
+
+
+        <div class="list-box">
+            <div class="card-footer">
+                <button class="button-11 card-footer-button list-button" id="more-info">Download Link</button>
+                <button class="button-11 card-footer-button list-button" id="fav-info">Watch Online</button>
+            </div>
+        </div>
+
+        <section class="info-other-details">
+            <div class="movie-dtails">
+                <p>{{movieResultData.overview}}</p>
+            </div>
+        </section>
+
+
+    </div>
+
+</body>
+
+</html>
