@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <title>Movi-Hub</title>
 </head>
 
@@ -26,7 +26,8 @@
 
             <div class="search-section">
                 <form action="/" method="POST" id="search" class="form-inline">
-                    <input name="moviename" type="text" class="form-control" id="search-input" placeholder="Search Here">
+                    <input name="moviename" type="text" class="form-control" id="search-input"
+                        placeholder="Search Here">
                     <button class="button-11" role="button" type="">Search</button>
                 </form>
             </div>
@@ -39,17 +40,18 @@
         </section>
 
         <section class="card-container">
+            {{#each movieData}}
             <div class="card-box">
-                <h1 oncopy="return false" oncut="return false">2000</h1>
-                <img class="card-image" src="https://movie-list.alphacamp.io/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg"
-                    alt="img">
+                <h1 oncopy="return false" oncut="return false">{{this.first_air_date}}</h1>
+                <img class="card-image" src="https://image.tmdb.org/t/p/original{{this.poster_path}}"
+                    alt="{{this.id}}">
                 <div class="card-main-footer">
                     <div class="card-info">
-                        <h3>Card Title</h3>
+                        <h3>{{this.name}}</h3>
                     </div>
 
                     <div class="card-footer">
-                        <a href="more-info/moreInfo.html">
+                        <a href="more-info/{{this.id}}">
                             <button class="button-11 card-footer-button" id="more-info">More Info</button>
                         </a>
 
@@ -59,6 +61,7 @@
                     </div>
                 </div>
             </div>
+            {{/each}}
 
 
             <div class="list-box">

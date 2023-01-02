@@ -1,0 +1,419 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "backdrop_path": "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+            "first_air_date": "2022-11-23",
+            "genre_ids": [
+                10765,
+                9648,
+                35
+            ],
+            "id": 119051,
+            "name": "Wednesday",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Wednesday",
+            "overview": "Wednesday Addams is sent to Nevermore Academy, a bizarre boarding school where she attempts to master her psychic powers, stop a monstrous killing spree of the town citizens, and solve the supernatural mystery that affected her family 25 years ago — all while navigating her new relationships.",
+            "popularity": 3385.499,
+            "poster_path": "/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+            "vote_average": 8.7,
+            "vote_count": 4283
+        },
+        {
+            "backdrop_path": "/hoVuI69nygLQBJ4FqgRKnukDeKt.jpg",
+            "first_air_date": "2022-12-25",
+            "genre_ids": [
+                10759,
+                10765
+            ],
+            "id": 106541,
+            "name": "The Witcher: Blood Origin",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Witcher: Blood Origin",
+            "overview": "More than a thousand years before the world of The Witcher, seven outcasts in the elven world unite in a blood quest against an unstoppable power.",
+            "popularity": 943.293,
+            "poster_path": "/vpfJK9F0UJNcAIIeC42oJyKMnZQ.jpg",
+            "vote_average": 6.1,
+            "vote_count": 134
+        },
+        {
+            "backdrop_path": "/bKxiLRPVWe2nZXCzt6JPr5HNWYm.jpg",
+            "first_air_date": "2020-12-10",
+            "genre_ids": [
+                18,
+                9648,
+                10759,
+                10765
+            ],
+            "id": 110316,
+            "name": "Alice in Borderland",
+            "origin_country": [
+                "JP"
+            ],
+            "original_language": "ja",
+            "original_name": "今際の国のアリス",
+            "overview": "With his two friends, a video-game-obsessed young man finds himself in a strange version of Tokyo where they must compete in dangerous games to win.",
+            "popularity": 559.078,
+            "poster_path": "/20mOwAAPwZ1vLQkw0fvuQHiG7bO.jpg",
+            "vote_average": 8.2,
+            "vote_count": 1085
+        },
+        {
+            "backdrop_path": "/xZUZ9i6vVayjyhR1vRo9Bjku4h.jpg",
+            "first_air_date": "2016-01-25",
+            "genre_ids": [
+                80,
+                10765
+            ],
+            "id": 63174,
+            "name": "Lucifer",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Lucifer",
+            "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+            "popularity": 516.547,
+            "poster_path": "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+            "vote_average": 8.5,
+            "vote_count": 12935
+        },
+        {
+            "backdrop_path": "/lcTuggU70y6pt6x13Rv1Ffjs93K.jpg",
+            "first_air_date": "2022-06-24",
+            "genre_ids": [
+                10759,
+                80,
+                18,
+                9648
+            ],
+            "id": 112836,
+            "name": "Money Heist: Korea - Joint Economic Area",
+            "origin_country": [
+                "KR"
+            ],
+            "original_language": "ko",
+            "original_name": "종이의 집: 공동경제구역",
+            "overview": "Disguised under the shadows of a mask, a crew of desperados band together under the leadership of a criminal mastermind known only as “The Professor” to pull off the biggest heist Korea has ever seen.",
+            "popularity": 379.344,
+            "poster_path": "/fjAAxDPzllwnCMqHDXYlw4IlkaL.jpg",
+            "vote_average": 7.9,
+            "vote_count": 484
+        },
+        {
+            "backdrop_path": "/rey2eh6752C2UbGYRileKk1PVTo.jpg",
+            "first_air_date": "2022-12-16",
+            "genre_ids": [
+                18,
+                80
+            ],
+            "id": 210916,
+            "name": "The Recruit",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Recruit",
+            "overview": "A fledgling lawyer at the CIA that becomes enmeshed in dangerous international power politics when a former asset threatens to expose the nature of her long-term relationship with the agency unless they exonerate her of a serious crime.",
+            "popularity": 398.013,
+            "poster_path": "/mLbFg0u2DPYuB5CILzwWk3kdI8b.jpg",
+            "vote_average": 7.9,
+            "vote_count": 82
+        },
+        {
+            "backdrop_path": "/s1xnjbOIQtwGObPnydTebp74G2c.jpg",
+            "first_air_date": "2022-11-17",
+            "genre_ids": [
+                9648,
+                18
+            ],
+            "id": 90669,
+            "name": "1899",
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "1899",
+            "overview": "Passengers on an immigrant ship traveling to the new continent get caught in a mysterious riddle when they find a second vessel adrift on the open sea.",
+            "popularity": 349.392,
+            "poster_path": "/gZleGu1MQVBArH2dlpZ9CGi0hhy.jpg",
+            "vote_average": 7.8,
+            "vote_count": 653
+        },
+        {
+            "backdrop_path": "/eAZtz2ydxBaHtJw3J42Gdy2DSpc.jpg",
+            "first_air_date": "2021-01-20",
+            "genre_ids": [
+                35,
+                18
+            ],
+            "id": 115857,
+            "name": "Daughter from Another Mother",
+            "origin_country": [
+                "MX"
+            ],
+            "original_language": "es",
+            "original_name": "Madre solo hay dos",
+            "overview": "After realizing their babies were exchanged at birth, two women develop a plan to adjust to their new lives: creating a single —and peculiar— family.",
+            "popularity": 314.886,
+            "poster_path": "/lq0n5QzBA78ndUDb9SdN93P8hjY.jpg",
+            "vote_average": 7.6,
+            "vote_count": 1152
+        },
+        {
+            "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+            "first_air_date": "2016-07-15",
+            "genre_ids": [
+                18,
+                10765,
+                9648
+            ],
+            "id": 66732,
+            "name": "Stranger Things",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Stranger Things",
+            "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+            "popularity": 323.313,
+            "poster_path": "/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+            "vote_average": 8.6,
+            "vote_count": 14708
+        },
+        {
+            "backdrop_path": "/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+            "first_air_date": "2019-12-20",
+            "genre_ids": [
+                18,
+                10759,
+                10765
+            ],
+            "id": 71912,
+            "name": "The Witcher",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Witcher",
+            "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
+            "popularity": 241.195,
+            "poster_path": "/7vjaCdMw15FEbXyLQTVa04URsPm.jpg",
+            "vote_average": 8.2,
+            "vote_count": 4344
+        },
+        {
+            "backdrop_path": "/hc2ZskN65AthhTp1DirOhEwHkDu.jpg",
+            "first_air_date": "2022-09-21",
+            "genre_ids": [
+                80,
+                18
+            ],
+            "id": 113988,
+            "name": "Dahmer – Monster: The Jeffrey Dahmer Story",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Dahmer – Monster: The Jeffrey Dahmer Story",
+            "overview": "This series examines the gruesome and horrific true crimes of Jeffrey Dahmer and the systemic failures that enabled one of America’s most notorious serial killers to continue his murderous spree in plain sight for over a decade.",
+            "popularity": 283.268,
+            "poster_path": "/f2PVrphK0u81ES256lw3oAZuF3x.jpg",
+            "vote_average": 8.1,
+            "vote_count": 1796
+        },
+        {
+            "backdrop_path": "/xkKIruOg4NoADdPjJJrvfiJHRdZ.jpg",
+            "first_air_date": "2020-10-02",
+            "genre_ids": [
+                18,
+                35
+            ],
+            "id": 82596,
+            "name": "Emily in Paris",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Emily in Paris",
+            "overview": "When ambitious Chicago marketing exec Emily unexpectedly lands her dream job in Paris, she embraces a new life as she juggles work, friends and romance.",
+            "popularity": 235.255,
+            "poster_path": "/Ak59Y9bzykmV0wAiwKsqrbORDBo.jpg",
+            "vote_average": 7.9,
+            "vote_count": 997
+        },
+        {
+            "backdrop_path": "/6nQNLJEv4PgJlck3G4FIB4vJ99o.jpg",
+            "first_air_date": "2018-10-05",
+            "genre_ids": [
+                80,
+                9648,
+                18
+            ],
+            "id": 76669,
+            "name": "Elite",
+            "origin_country": [
+                "ES"
+            ],
+            "original_language": "es",
+            "original_name": "Élite",
+            "overview": "When three working class kids enroll in the most exclusive school in Spain, the clash between the wealthy and the poor students leads to tragedy.",
+            "popularity": 220.9,
+            "poster_path": "/3NTAbAiao4JLzFQw6YxP1YZppM8.jpg",
+            "vote_average": 8.1,
+            "vote_count": 8581
+        },
+        {
+            "backdrop_path": "/b8Lb8FOxfYwDLSbpwdLsN2u8NSK.jpg",
+            "first_air_date": "2022-12-07",
+            "genre_ids": [
+                35
+            ],
+            "id": 214454,
+            "name": "The Most Beautiful Flower",
+            "origin_country": [
+                "MX"
+            ],
+            "original_language": "es",
+            "original_name": "La flor más bella",
+            "overview": "Curvy, curly, confident Mich knows she's fabulous. Now she just has to convince everyone else at her Xochimilco high school to believe it too.",
+            "popularity": 187.072,
+            "poster_path": "/udzRfQtfwIJn9intAqP8AbsLFaZ.jpg",
+            "vote_average": 7.8,
+            "vote_count": 23
+        },
+        {
+            "backdrop_path": "/8Xs20y8gFR0W9u8Yy9NKdpZtSu7.jpg",
+            "first_air_date": "2022-01-28",
+            "genre_ids": [
+                10759,
+                18,
+                10765
+            ],
+            "id": 99966,
+            "name": "All of Us Are Dead",
+            "origin_country": [
+                "KR"
+            ],
+            "original_language": "ko",
+            "original_name": "지금 우리 학교는",
+            "overview": "A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out — or turn into one of the rabid infected.",
+            "popularity": 218.035,
+            "poster_path": "/6zUUtzj7aJzOdoxhpiGzEKYtj1o.jpg",
+            "vote_average": 8.4,
+            "vote_count": 2878
+        },
+        {
+            "backdrop_path": "/pYiIcenKt7L2cMrhn67xAxCGgzR.jpg",
+            "first_air_date": "2022-12-15",
+            "genre_ids": [
+                16,
+                10751
+            ],
+            "id": 115577,
+            "name": "Sonic Prime",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Sonic Prime",
+            "overview": "When an explosive battle with Dr. Eggman shatters the universe, Sonic races through parallel dimensions to reconnect with his friends and save the world.",
+            "popularity": 200.284,
+            "poster_path": "/1Hie7gCDsvt7wtPRuUAk4ZzaoQa.jpg",
+            "vote_average": 8.4,
+            "vote_count": 88
+        },
+        {
+            "backdrop_path": "/tiLJNqQuCwIIgK30iavU6x0SFQj.jpg",
+            "first_air_date": "2021-10-22",
+            "genre_ids": [
+                35,
+                16
+            ],
+            "id": 97727,
+            "name": "Inside Job",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Inside Job",
+            "overview": "For employees of the Deep State, conspiracies aren't just theories — they're fact. And keeping them a secret is a full-time job.",
+            "popularity": 180.002,
+            "poster_path": "/qwJUDMJ4i3KBYjeUFK9Js87iJEa.jpg",
+            "vote_average": 8.2,
+            "vote_count": 507
+        },
+        {
+            "backdrop_path": "/zymbuoBoL1i94xAOzVJF6IuWLfD.jpg",
+            "first_air_date": "2018-05-02",
+            "genre_ids": [
+                10759,
+                18,
+                35
+            ],
+            "id": 77169,
+            "name": "Cobra Kai",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Cobra Kai",
+            "overview": "This Karate Kid sequel series picks up 30 years after the events of the 1984 All Valley Karate Tournament and finds Johnny Lawrence on the hunt for redemption by reopening the infamous Cobra Kai karate dojo. This reignites his old rivalry with the successful Daniel LaRusso, who has been working to maintain the balance in his life without mentor Mr. Miyagi.",
+            "popularity": 186.933,
+            "poster_path": "/m7tG5E1EbywuwTsl6hq990So0Bx.jpg",
+            "vote_average": 8.2,
+            "vote_count": 5402
+        },
+        {
+            "backdrop_path": "/uoBUj75vcxF17uq2ToD63lgPdzD.jpg",
+            "first_air_date": "2022-12-08",
+            "genre_ids": [
+                35,
+                18,
+                16
+            ],
+            "id": 210942,
+            "name": "Lookism",
+            "origin_country": [
+                "KR"
+            ],
+            "original_language": "ko",
+            "original_name": "외모지상주의",
+            "overview": "In a society that favors good looks, a high school outcast leads a double life switching between his two bodies that are polar opposites in appearance.",
+            "popularity": 174.153,
+            "poster_path": "/qkoM63HDuCOSwxGfb0pljrgns9I.jpg",
+            "vote_average": 8.6,
+            "vote_count": 98
+        },
+        {
+            "backdrop_path": "/75HgaphatW0PDI3XIHQWZUpbhn6.jpg",
+            "first_air_date": "2017-12-01",
+            "genre_ids": [
+                10765,
+                18,
+                9648,
+                80
+            ],
+            "id": 70523,
+            "name": "Dark",
+            "origin_country": [
+                "DE"
+            ],
+            "original_language": "de",
+            "original_name": "Dark",
+            "overview": "A missing child causes four families to help each other for answers. What they could not imagine is that this mystery would be connected to innumerable other secrets of the small town.",
+            "popularity": 131.105,
+            "poster_path": "/7yQyDCqSazrYTnmxdQLAZ8YDH87.jpg",
+            "vote_average": 8.4,
+            "vote_count": 5508
+        }
+    ],
+    "total_pages": 81,
+    "total_results": 1610
+}
