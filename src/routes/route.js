@@ -19,12 +19,6 @@ routes.get('/more-info/:id', (req, res) => {
             })
         }
     });
-    // console.log(movieResult.id);
-    // res.render('moreinfo', {
-    //     movieResultData: []
-    // })
 })
-
-
 
 module.exports = routes
