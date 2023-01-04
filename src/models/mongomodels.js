@@ -7,8 +7,32 @@
 
 const mongoose = require('mongoose')
 const testschema = mongoose.Schema({
-    name:String,
-    id:Number
+    name: String,
+    id: Number
 })
 
-module.exports = mongoose.model('testschemaCollection',testschema)
+const movieMainPageSchema = mongoose.Schema({
+    results: [
+        {
+            yearOfRelease: String,
+            imagePath: String,
+            title: String,
+            overview: String,
+            originalLanguage: String,
+            imdbRating: String,
+            isbookMark: {
+                type: Boolean,
+                default: false
+            },
+            originCountry: String,
+            productionHouse: [String]
+
+        }
+    ]
+})
+
+// module.exports = mongoose.model('testschemaCollection', testschema)
+module.exports = {
+    testschema: mongoose.model('testschemaCollection', testschema),
+    movieMainPageSchema: mongoose.model('movieMainPage', movieMainPageSchema)
+}
