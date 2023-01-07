@@ -70,8 +70,8 @@
                 {{#each movieData}}
                 <div class="list-box">
                     <h3>{{this.title}}</h3>
-                    <div class="card-footer">
-                        <a href="more-info/{{this._id.stringify}}">
+                    <div class="list-card-footer">
+                        <a href="more-info/{{this._id}}">
                             <button class="button-11 card-footer-button" id="more-info">More Info</button>
                         </a>
 
@@ -89,7 +89,6 @@
     </div>
 
     <script src="/static/js/script.js"></script>
-
 
 </body>
 

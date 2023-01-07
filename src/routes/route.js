@@ -12,7 +12,7 @@ routes.get('/', async (req, res) => {
     res.render('index', {
         movieData: allMovieData[0].results
     })
-    console.log(allMovieData[0].results[0]);
+    // console.log(allMovieData[0].results[0]);
 })
 
 routes.get('/more-info/:id', async (req, res) => {
@@ -37,8 +37,7 @@ routes.get('/more-info/:id', async (req, res) => {
     res.render('moreinfo',{
         movieResultData:movieData[0].results[0]
     })
-    console.log(movieData);
-
+    // console.log(movieData);
 
 })
 

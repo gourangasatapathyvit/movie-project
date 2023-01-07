@@ -198,7 +198,13 @@ body {
     bottom: 0;
 }
 
-.card-footer>a {
+.list-card-footer {
+    display: flex;
+    padding: 5px;
+    bottom: 0;
+}
+
+.card-footer>a,.list-card-footer>a {
     text-decoration: none;
     padding: 2px;
 }
@@ -213,12 +219,16 @@ body {
     padding-top: 1.5rem;
 }
 
-.list-box>h3 {
+/* .list-box>h3 {
     max-width: 5px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 2rem;
-}
+} */
 
+.list-box>h3 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+}
 
 .list-button {
     margin: 0 5px;
