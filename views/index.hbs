@@ -43,16 +43,16 @@
             <div class="card-box-container">
                 {{#each movieData}}
                 <div class="card-box">
-                    <h1>{{this.first_air_date}}</h1>
-                    <img class="card-image" src="https://image.tmdb.org/t/p/original{{this.poster_path}}"
-                        alt="{{this.id}}">
+                    <h1>{{this.yearOfRelease}}</h1>
+                    <img class="card-image" src="{{this.imagePath}}"
+                        alt="{{this.title}}{{this.imdbRating}}">
                     <div class="card-main-footer">
                         <div class="card-info">
-                            <h3>{{this.name}}</h3>
+                            <h3>{{this.title}}</h3>
                         </div>
 
                         <div class="card-footer">
-                            <a href="more-info/{{this.id}}">
+                            <a href="more-info/{{this._id}}">
                                 <button class="button-11 card-footer-button" id="more-info">More Info</button>
                             </a>
 
@@ -69,9 +69,9 @@
             <div class="list-box-container">
                 {{#each movieData}}
                 <div class="list-box">
-                    <h3>{{this.name}}</h3>
+                    <h3>{{this.title}}</h3>
                     <div class="card-footer">
-                        <a href="more-info/{{this.id}}">
+                        <a href="more-info/{{this._id.stringify}}">
                             <button class="button-11 card-footer-button" id="more-info">More Info</button>
                         </a>
 

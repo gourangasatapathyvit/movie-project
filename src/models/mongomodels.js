@@ -6,10 +6,16 @@
 
 
 const mongoose = require('mongoose')
+
+
 const testschema = mongoose.Schema({
     name: String,
-    id: Number
-})
+    id: Number,
+    isUsed: {
+        type: Boolean,
+        default: true
+    },
+},{strict:false})
 
 const movieMainPageSchema = mongoose.Schema({
     results: [
@@ -31,7 +37,6 @@ const movieMainPageSchema = mongoose.Schema({
     ]
 })
 
-// module.exports = mongoose.model('testschemaCollection', testschema)
 module.exports = {
     testschema: mongoose.model('testschemaCollection', testschema),
     movieMainPageSchema: mongoose.model('movieMainPage', movieMainPageSchema)

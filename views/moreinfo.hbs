@@ -37,37 +37,37 @@
             <div class="image-container">
                 <span class="material-symbols-outlined">bookmark_add</span>
                 <span class="material-symbols-outlined">bookmark_added</span>
-                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                <img class="info-image" src="{{movieResultData.imagePath}}"
                     alt="img">
             </div>
 
             <div class="movie-info">
-                <h1>{{movieResultData.name}}</h1>
-                <h3>Director</h3>
-                <h3>Stars</h3>
-                <h3>{{movieResultData.origin_country.[0]}}</h3>
+                <h1>{{movieResultData.title}}</h1>
+                <h3>{{movieResultData.productionHouse.[0]}}</h3>
+                <h3>{{movieResultData.imdbRating}}</h3>
+                <h3>{{movieResultData.originCountry}}</h3>
             </div>
 
         </section>
 
         <section class="info-image-quality">
             <div class="image-container">
-                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                <img class="info-image" src="{{movieResultData.imagePath}}"
                     alt="img">
             </div>
             <div class="image-container">
-                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                <img class="info-image" src="{{movieResultData.imagePath}}"
                     alt="img">
             </div>
             <div class="image-container">
-                <img class="info-image" src="https://image.tmdb.org/t/p/original{{movieResultData.poster_path}}"
+                <img class="info-image" src="{{movieResultData.imagePath}}"
                     alt="img">
             </div>
         </section>
 
 
         <div class="list-box">
-            <div class="card-footer">
+            <div class="moreinfo-card-footer">
                 <button class="button-11 card-footer-button list-button" id="more-info">Download Link</button>
                 <button class="button-11 card-footer-button list-button" id="fav-info">Watch Online</button>
             </div>

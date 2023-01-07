@@ -90,3 +90,9 @@
 }
 
 
+.moreinfo-card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    bottom: 0;
+}
