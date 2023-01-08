@@ -23,17 +23,23 @@ app.set('views', 'views')
 
 
 mongoose.connect(url, async () => {
-
-     /* mongomodels.testschema.create({
-        name:"polo g loea",
-        id:1,
-        isUsed:false,
-        "lora":1234
-    }) */
-
     // mongomodels.movieMainPageSchema.create(movieJson)
 
-/*     let results = await mongomodels.movieMainPageSchema.aggregate(
+    /* mongomodels.testschema.create({
+       name:"polo g loea",
+       id:1,
+       isUsed:false,
+       "lora":1234
+   }) */
+
+    /* let results = await mongomodels.movieMainPageSchema.updateOne(
+        {'results._id':mongoose.Types.ObjectId('63bab79d8ee9f60f78726237')},
+        {$set:{
+            "results.$.title":"hum do Hamare Do"
+        }}
+    ); */
+
+    /* let results = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
                 $project: {
@@ -43,14 +49,14 @@ mongoose.connect(url, async () => {
                             input: "$results",
                             as: "result",
                             // cond: { $eq: ["$$result.title", "The Kashmir Files"] }
-                            cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63b5cfbfbcc3196a2a23c44c')] }
+                            cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63ba4ab0818099c9bf301566')] }
                         }
                     }
                 }
             }
         ]
     ); */
-    // console.log(results[0]);
+    // console.log(results);
     console.log('mongo is connected');
 })
 

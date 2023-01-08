@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/moreInfo.css">
     <title>Movi-Hub</title>
@@ -35,10 +37,11 @@
 
         <section class="info-section">
             <div class="image-container">
-                <span class="material-symbols-outlined">bookmark_add</span>
-                <span class="material-symbols-outlined">bookmark_added</span>
-                <img class="info-image" src="{{movieResultData.imagePath}}"
-                    alt="img">
+                <a href="/bookmark/{{movieResultData._id}}">
+                    <span id="add"><i class="{{movieResultData.bookMarkStatus}} fa-bookmark"></i></span>
+                    {{!-- fa-solid  fa-regular --}}
+                </a>
+                <img class="info-image" src="{{movieResultData.imagePath}}" alt="img">
             </div>
 
             <div class="movie-info">
@@ -52,16 +55,13 @@
 
         <section class="info-image-quality">
             <div class="image-container">
-                <img class="info-image" src="{{movieResultData.imagePath}}"
-                    alt="img">
+                <img class="info-image" src="{{movieResultData.imagePath}}" alt="img">
             </div>
             <div class="image-container">
-                <img class="info-image" src="{{movieResultData.imagePath}}"
-                    alt="img">
+                <img class="info-image" src="{{movieResultData.imagePath}}" alt="img">
             </div>
             <div class="image-container">
-                <img class="info-image" src="{{movieResultData.imagePath}}"
-                    alt="img">
+                <img class="info-image" src="{{movieResultData.imagePath}}" alt="img">
             </div>
         </section>
 

@@ -26,9 +26,9 @@ const movieMainPageSchema = mongoose.Schema({
             overview: String,
             originalLanguage: String,
             imdbRating: String,
-            isbookMark: {
-                type: Boolean,
-                default: false
+            bookMarkStatus: {
+                type: String,
+                default: "fa-regular"
             },
             originCountry: String,
             productionHouse: [String]

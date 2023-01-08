@@ -16,7 +16,7 @@ routes.get('/', async (req, res) => {
 })
 
 routes.get('/more-info/:id', async (req, res) => {
-    console.log('triggered at => ' + req.url.split('/')[2]);
+    console.log('triggered each movie => ' + req.url.split('/')[2]);
     let movieData = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
@@ -34,11 +34,50 @@ routes.get('/more-info/:id', async (req, res) => {
         ]
     );
 
-    res.render('moreinfo',{
-        movieResultData:movieData[0].results[0]
+    res.render('moreinfo', {
+        movieResultData: movieData[0].results[0]
     })
     // console.log(movieData);
 
+})
+
+routes.get('/bookmark/:movieId', async(req, res) => {
+    let query = {'results._id':mongoose.Types.ObjectId(req.url.split('/')[2])}
+    let queryTag = ''
+
+    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result._id", mongoose.Types.ObjectId(req.url.split('/')[2])] }
+                        }
+                    }
+                }
+            }
+        ]
+    );
+
+    if(movieData[0].results[0].bookMarkStatus==='fa-regular'){
+        queryTag = 'fa-solid'
+    }
+    else if(movieData[0].results[0].bookMarkStatus==='fa-solid'){
+        queryTag = 'fa-regular'
+    }
+    let upDateresults = await mongomodels.movieMainPageSchema.updateOne(
+        query,
+        {
+            $set: {
+                "results.$.bookMarkStatus": queryTag
+            }
+        }
+    );
+
+    res.redirect(`/more-info/${req.url.split('/')[2]}`)
 })
 
 module.exports = routes
