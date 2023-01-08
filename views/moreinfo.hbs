@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,30 +16,13 @@
 
 <body>
     <div class="container">
-        <nav class="navbar">
-            <header class="__header">Hub</header>
-            <ul class="nav__option">
-                <li class="option">Home</li>
-                <li class="option">Movies</li>
-                <li class="option">Series</li>
-                <li class="option">Watch Later</li>
-                <li class="option">About</li>
-            </ul>
-
-            <div class="search-section">
-                <form id="search" class="form-inline">
-                    <input type="text" class="form-control" id="search-input" placeholder="Search Here">
-                    <button class="button-11" role="button">Search</button>
-                </form>
-            </div>
-
-        </nav>
+        {{> navbar}}
 
         <section class="info-section">
             <div class="image-container">
                 <a href="/bookmark/{{movieResultData._id}}">
                     <span id="add"><i class="{{movieResultData.bookMarkStatus}} fa-bookmark"></i></span>
-                    {{!-- fa-solid  fa-regular --}}
+                    {{!-- fa-solid fa-regular --}}
                 </a>
                 <img class="info-image" src="{{movieResultData.imagePath}}" alt="img">
             </div>

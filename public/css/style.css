@@ -46,6 +46,10 @@ body {
     /* border: 2px solid green; */
 }
 
+.nav__option>a,.navbar>a{
+    text-decoration: none;
+}
+
 .nav__option {
     display: flex;
     list-style: none;

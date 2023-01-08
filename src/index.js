@@ -20,9 +20,11 @@ app.use('/static', express.static(path.join('public')))
 app.use('/', routes)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
+hbs.registerPartials('views/partials')
 
 
 mongoose.connect(url, async () => {
+    console.log("123456",__dirname);
     // mongomodels.movieMainPageSchema.create(movieJson)
 
     /* mongomodels.testschema.create({

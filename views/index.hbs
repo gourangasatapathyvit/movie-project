@@ -13,26 +13,8 @@
 
 <body ondragstart="return false;" ondrop="return false" oncopy="return false" oncut="return false">
     <div class="container">
-        <nav class="navbar">
-            <header class="__header">Hub</header>
-
-            <ul class="nav__option">
-                <li class="option">Home</li>
-                <li class="option">Movies</li>
-                <li class="option">Series</li>
-                <li class="option">Watch Later</li>
-                <li class="option">About</li>
-            </ul>
-
-            <div class="search-section">
-                <form action="/" method="POST" id="search" class="form-inline">
-                    <input name="moviename" type="text" class="form-control" id="search-input"
-                        placeholder="Search Here">
-                    <button class="button-11" role="button" type="">Search</button>
-                </form>
-            </div>
-
-        </nav>
+        
+          {{> navbar}}
 
         <section class="sorting-style">
             <span id="table-view" class="material-symbols-outlined icon-size">apps</span>
@@ -44,8 +26,7 @@
                 {{#each movieData}}
                 <div class="card-box">
                     <h1>{{this.yearOfRelease}}</h1>
-                    <img class="card-image" src="{{this.imagePath}}"
-                        alt="{{this.title}}{{this.imdbRating}}">
+                    <img class="card-image" src="{{this.imagePath}}" alt="{{this.title}}{{this.imdbRating}}">
                     <div class="card-main-footer">
                         <div class="card-info">
                             <h3>{{this.title}}</h3>
