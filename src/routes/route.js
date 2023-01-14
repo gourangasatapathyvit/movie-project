@@ -41,8 +41,8 @@ routes.get('/more-info/:id', async (req, res) => {
 
 })
 
-routes.get('/bookmark/:movieId', async(req, res) => {
-    let query = {'results._id':mongoose.Types.ObjectId(req.url.split('/')[2])}
+routes.get('/bookmark/:movieId', async (req, res) => {
+    let query = { 'results._id': mongoose.Types.ObjectId(req.url.split('/')[2]) }
     let queryTag = ''
 
     let movieData = await mongomodels.movieMainPageSchema.aggregate(
@@ -62,10 +62,10 @@ routes.get('/bookmark/:movieId', async(req, res) => {
         ]
     );
 
-    if(movieData[0].results[0].bookMarkStatus==='fa-regular'){
+    if (movieData[0].results[0].bookMarkStatus === 'fa-regular') {
         queryTag = 'fa-solid'
     }
-    else if(movieData[0].results[0].bookMarkStatus==='fa-solid'){
+    else if (movieData[0].results[0].bookMarkStatus === 'fa-solid') {
         queryTag = 'fa-regular'
     }
     let upDateresults = await mongomodels.movieMainPageSchema.updateOne(
@@ -78,6 +78,39 @@ routes.get('/bookmark/:movieId', async(req, res) => {
     );
 
     res.redirect(`/more-info/${req.url.split('/')[2]}`)
+})
+
+
+routes.post('/movie',async (req, res) => {
+    let queriedResult = []
+    console.log('search: post req hitted');
+    let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            { $unwind: '$results' },
+            {
+                $match: {
+                    'results.title': { $regex: req.body.moviename.trim().split(" ").join("|"), $options: 'i' }
+                }
+            },
+            {
+                $project:{
+                    _id: 0,
+                    'results._id':0,
+                    '__v':0
+                }
+            }
+
+        ]
+    );
+    _.each(resultsRegex,function(item){
+        if(resultsRegex){
+            queriedResult.push(item.results)
+        }
+    })
+
+    res.render('index', {
+        movieData:queriedResult
+    })
 })
 
 module.exports = routes

@@ -24,7 +24,6 @@ hbs.registerPartials('views/partials')
 
 
 mongoose.connect(url, async () => {
-    console.log("123456",__dirname);
     // mongomodels.movieMainPageSchema.create(movieJson)
 
     /* mongomodels.testschema.create({
@@ -41,7 +40,26 @@ mongoose.connect(url, async () => {
         }}
     ); */
 
-    /* let results = await mongomodels.movieMainPageSchema.aggregate(
+    // let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
+    //     [
+    //         { $unwind: '$results' },
+    //         {
+    //             $match: {
+    //                 // 'results.title':  { $regex: 'the|black', $options: 'i' }
+    //                 'results.title': { $regex: 'the|black|adam', $options: 'i' }
+    //             }
+    //         },
+    //         {
+    //             $project: {
+    //                 _id: 0,
+    //                 'results._id': 0,
+    //                 '__v': 0
+    //             }
+    //         }
+    //     ]
+    // );
+
+    let results = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
                 $project: {
@@ -50,15 +68,25 @@ mongoose.connect(url, async () => {
                         $filter: {
                             input: "$results",
                             as: "result",
-                            // cond: { $eq: ["$$result.title", "The Kashmir Files"] }
-                            cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63ba4ab0818099c9bf301566')] }
+                            cond: { $eq: ["$$result.title", "The Kashmir Files"] }
+                            // cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63ba4ab0818099c9bf301566')] }
+                            // cond: {$in: [ "$$result.title", ['The Kashmir Files'] ] }
+
+                            // cond: {
+                            //     $regexMatch: {
+                            //         input: "$$result.title",
+                            //         regex: "Kashmir"
+                            //     }
+                            // }
+
+
                         }
                     }
                 }
             }
         ]
-    ); */
-    // console.log(results);
+    );
+    // console.log(resultsRegex);
     console.log('mongo is connected');
 })
 
