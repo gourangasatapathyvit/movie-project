@@ -31,8 +31,22 @@ const movieMainPageSchema = mongoose.Schema({
                 default: "fa-regular"
             },
             originCountry: String,
-            productionHouse: [String]
+            productionHouse: [String],
 
+            itemsInformation:{
+                itemType:{
+                    type: String,
+                    default: "not-defined"
+                },
+                NumberOfSeasons:{
+                    type: Number,
+                    default: 0
+                },
+                NumberOfEpisods:{
+                    type: Number,
+                    default: 0
+                }
+            }
         }
     ]
 })

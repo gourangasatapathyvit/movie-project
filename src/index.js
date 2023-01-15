@@ -24,7 +24,20 @@ hbs.registerPartials('views/partials')
 
 
 mongoose.connect(url, async () => {
+    // let query = { '_id': mongoose.Types.ObjectId('63b97479ac1eede3ef4f0044') }
     // mongomodels.movieMainPageSchema.create(movieJson)
+    
+    /* let upDateresult = await mongomodels.testschema.updateMany(
+        query,
+        {
+            $set: {
+                // "results.$.bookMarkStatus": queryTag,
+                "testschema.res.bookMarkStatus": "holaa",
+                // "bookMarkStatu": "hola"
+            }
+        }
+    ); */
+
 
     /* mongomodels.testschema.create({
        name:"polo g loea",
@@ -40,26 +53,26 @@ mongoose.connect(url, async () => {
         }}
     ); */
 
-    // let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
-    //     [
-    //         { $unwind: '$results' },
-    //         {
-    //             $match: {
-    //                 // 'results.title':  { $regex: 'the|black', $options: 'i' }
-    //                 'results.title': { $regex: 'the|black|adam', $options: 'i' }
-    //             }
-    //         },
-    //         {
-    //             $project: {
-    //                 _id: 0,
-    //                 'results._id': 0,
-    //                 '__v': 0
-    //             }
-    //         }
-    //     ]
-    // );
+    /* let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            { $unwind: '$results' },
+            {
+                $match: {
+                    // 'results.title':  { $regex: 'the|black', $options: 'i' }
+                    'results.title': { $regex: 'the|black|adam', $options: 'i' }
+                }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    'results._id': 0,
+                    '__v': 0
+                }
+            }
+        ]
+    ); */
 
-    let results = await mongomodels.movieMainPageSchema.aggregate(
+  /*   let results = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
                 $project: {
@@ -85,7 +98,7 @@ mongoose.connect(url, async () => {
                 }
             }
         ]
-    );
+    ); */
     // console.log(resultsRegex);
     console.log('mongo is connected');
 })

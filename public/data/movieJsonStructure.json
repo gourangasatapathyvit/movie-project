@@ -10,7 +10,10 @@
       "originCountry": "india",
       "productionHouse": [
         "Zee Studios"
-      ]
+      ],
+      "itemsInformation": {
+        "itemType": "Movie"
+      }
     },
     {
       "yearOfRelease": "2022",
@@ -22,7 +25,10 @@
       "originCountry": "United States of America",
       "productionHouse": [
         "DC Comics"
-      ]
+      ],
+      "itemsInformation": {
+        "itemType": "Movie"
+      }
     },
     {
       "yearOfRelease": "2022",
@@ -31,10 +37,13 @@
       "overview": "A young girl stows away on the ship of a legendary sea monster hunter, turning his life upside down as they venture into uncharted waters.",
       "originalLanguage": "en",
       "imdbRating": "7.1",
-      "originCountry":"United States Canada",
+      "originCountry": "United States Canada",
       "productionHouse": [
         "Netflix Animation"
-      ]
+      ],
+      "itemsInformation": {
+        "itemType": "Movie"
+      }
     },
     {
       "yearOfRelease": "2021",
@@ -43,7 +52,7 @@
       "overview": "Dhruv, who grew up an orphan, is in love with a woman who wishes to marry someone with a family. In order to fulfil his lover's wish, he hires two older individuals to pose as his parents.",
       "originalLanguage": "hi",
       "imdbRating": "6.0",
-      "originCountry":"india",
+      "originCountry": "india",
       "productionHouse": [
         "Maddock Films"
       ]
@@ -55,10 +64,30 @@
       "overview": "Shang-Chi, a martial artist, lives a quiet life after he leaves his father and the shadowy Ten Rings organisation behind. Years later, he is forced to confront his past when the Ten Rings attack him.",
       "originalLanguage": "en",
       "imdbRating": "7.4",
-      "originCountry":"United States of America",
+      "originCountry": "United States of America",
       "productionHouse": [
         "Marvel Entertainment"
-      ]
+      ],
+      "itemsInformation": {
+        "itemType": "Movie"
+      }
+    },
+    {
+      "yearOfRelease": "2019",
+      "imagePath": "https://upload.wikimedia.org/wikipedia/en/d/dc/The_Family_Man.jpeg",
+      "title": "The Family Man",
+      "overview": "Srikant Tiwari is a middle-class man who also serves as a world-class spy; he tries to balance his familial responsibilities with those at the highly secretive special cell of the National Intelligence Agency.",
+      "originalLanguage": "hi",
+      "imdbRating": "7.4",
+      "originCountry": "india",
+      "productionHouse": [
+        "D2R Films"
+      ],
+      "itemsInformation": {
+        "itemType": "Series",
+        "NumberOfSeasons": 2,
+        "NumberOfEpisods": 19
+      }
     }
   ]
 }

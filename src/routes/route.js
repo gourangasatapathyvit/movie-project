@@ -72,7 +72,7 @@ routes.get('/bookmark/:movieId', async (req, res) => {
         query,
         {
             $set: {
-                "results.$.bookMarkStatus": queryTag
+                "results.$.bookMarkStatus": queryTag,
             }
         }
     );
@@ -81,7 +81,47 @@ routes.get('/bookmark/:movieId', async (req, res) => {
 })
 
 
-routes.post('/movie',async (req, res) => {
+routes.get('/bookmarks/:movieId', async (req, res) => {
+    let query = { 'results._id': mongoose.Types.ObjectId(req.url.split('/')[2]) }
+    let queryTag = ''
+
+    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result._id", mongoose.Types.ObjectId(req.url.split('/')[2])] }
+                        }
+                    }
+                }
+            }
+        ]
+    );
+
+    if (movieData[0].results[0].bookMarkStatus === 'fa-regular') {
+        queryTag = 'fa-solid'
+    }
+    else if (movieData[0].results[0].bookMarkStatus === 'fa-solid') {
+        queryTag = 'fa-regular'
+    }
+    let upDateresults = await mongomodels.movieMainPageSchema.updateOne(
+        query,
+        {
+            $set: {
+                "results.$.bookMarkStatus": queryTag
+            }
+        }
+    );
+
+    res.redirect(`/`)
+})
+
+
+routes.post('/movie', async (req, res) => {
     let queriedResult = []
     console.log('search: post req hitted');
     let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
@@ -93,24 +133,101 @@ routes.post('/movie',async (req, res) => {
                 }
             },
             {
-                $project:{
+                $project: {
                     _id: 0,
-                    'results._id':0,
-                    '__v':0
+                    'results._id': 0,
+                    '__v': 0
                 }
             }
 
         ]
     );
-    _.each(resultsRegex,function(item){
-        if(resultsRegex){
+    _.each(resultsRegex, function (item) {
+        if (resultsRegex) {
             queriedResult.push(item.results)
         }
     })
 
     res.render('index', {
-        movieData:queriedResult
+        movieData: queriedResult
     })
 })
+
+routes.get('/movies', async (req, res) => {
+    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result.itemsInformation.itemType", 'Movie'] }
+                        }
+                    }
+                }
+            }
+        ]
+    );
+
+    // res.send(movieData[0].results)
+    res.render('index', {
+        movieData: movieData[0].results
+    })
+
+});
+
+routes.get('/series', async (req, res) => {
+    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result.itemsInformation.itemType", 'Series'] }
+                        }
+                    }
+                }
+            }
+        ]
+    );
+
+    // res.send(movieData[0].results)
+    res.render('index', {
+        movieData: movieData[0].results
+    })
+
+});
+
+routes.get('/watchlater', async (req, res) => {
+    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result.bookMarkStatus", 'fa-solid'] }
+                        }
+                    }
+                }
+            }
+        ]
+    );
+
+    // res.send(movieData[0].results)
+    res.render('index', {
+        movieData: movieData[0].results
+    })
+
+});
+
+
 
 module.exports = routes
