@@ -135,7 +135,6 @@ routes.post('/movie', async (req, res) => {
             {
                 $project: {
                     _id: 0,
-                    'results._id': 0,
                     '__v': 0
                 }
             }
