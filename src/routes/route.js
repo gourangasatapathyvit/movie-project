@@ -227,6 +227,46 @@ routes.get('/watchlater', async (req, res) => {
 
 });
 
+routes.get('/test/:id', async (req, res) => {
+    let x = req.url
+
+    let queriedResult = []
+    let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            { $unwind: '$results' },
+            {
+                $match: {
+                    'results.title': { $regex: req.url.split("/")[2], $options: 'i' }
+                }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    '__v': 0,
+                    'results.bookMarkStatus': 0,
+                    'results.imagePath': 0,
+                    'results.imdbRating': 0,
+                    'results.imagePath': 0,
+                    'results.itemsInformation': 0,
+                    'results.originCountry': 0,
+                    'results.originalLanguage': 0,
+                    'results.overview': 0,
+                    'results.productionHouse': 0,
+                    'results.yearOfRelease': 0,
+
+                }
+            }
+
+        ]
+    );
+    _.each(resultsRegex, function (item) {
+        if (resultsRegex) {
+            queriedResult.push(item.results)
+        }
+    })
+    
+    res.send(queriedResult)
+})
 
 
 module.exports = routes
