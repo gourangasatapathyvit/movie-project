@@ -52,6 +52,12 @@ searchinput.onkeyup = (e) => {
                 for (const eachData of res) {
                     let listCard = document.createElement('li')
                     let listAnchorLink = document.createElement('a')
+
+                    listCard.classList.add('list-items')
+                    listCard.style.cursor = "pointer"
+                    listAnchorLink.style.textDecoration = 'none'
+
+
                     listAnchorLink.setAttribute('href', `more-info/${eachData._id}`)
                     listAnchorLink.textContent = eachData.title
                     listCard.appendChild(listAnchorLink)
@@ -60,6 +66,8 @@ searchinput.onkeyup = (e) => {
             }
             else {
                 let listCard = document.createElement('li')
+                listCard.classList.add('list-items')
+                listCard.style.cursor = "pointer"
                 listCard.textContent = 'nothing found'
                 searchRecomendContainer.appendChild(listCard)
             }

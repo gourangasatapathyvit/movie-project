@@ -77,10 +77,10 @@ body {
 }
 
 .autocom-box{
-    border: 1px solid black;
     position: absolute;
     width: 100%;
-
+    z-index: 1;
+    background-color: white;
 }
 
 .autocom-box>li{
@@ -292,4 +292,14 @@ body {
 .button-11:focus {
     box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
     outline: 0;
+}
+
+.list-items{
+    padding: 10px 5px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.list-items:hover{
+    background-color: #aba5a5;
 }
