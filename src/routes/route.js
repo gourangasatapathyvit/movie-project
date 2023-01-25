@@ -228,7 +228,6 @@ routes.get('/watchlater', async (req, res) => {
 });
 
 routes.get('/test/:id', async (req, res) => {
-    let x = req.url
 
     let queriedResult = []
     let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
