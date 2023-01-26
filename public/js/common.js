@@ -23,6 +23,15 @@ function onSearchKeypress() {
             autoCommBox.classList.remove('remove-display')
         }
     })
+
+    window.addEventListener('scroll', (e) => {
+        document.getElementById("menu-bar").classList.remove("change");
+        document.getElementById("nav").classList.remove("change");
+        document.getElementById("menu-bg").classList.remove("change-bg");
+        document.getElementById("menu-bg").style.position = 'absolute'
+        document.getElementById("menu").style.position = 'absolute'
+    })
+
 }
 
 function fetchList(value) {
