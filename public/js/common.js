@@ -5,7 +5,7 @@ let autoCommBox = document.querySelector('.autocom-box')
 function onSearchKeypress() {
 
     searchinput.addEventListener('click', (e) => {
-        fetchList(e.target.values)
+        fetchList(e.target.value)
     })
 
     searchinput.onkeyup = (e) => {
