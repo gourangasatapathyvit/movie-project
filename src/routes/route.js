@@ -255,7 +255,7 @@ routes.get('/test/', async (req, res) => {
 
                 }
             },
-            { $limit: 6 }
+            { $limit: parseInt(process.env.limit) }
 
         ]
     );
