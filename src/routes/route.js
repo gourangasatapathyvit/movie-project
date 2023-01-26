@@ -227,7 +227,7 @@ routes.get('/watchlater', async (req, res) => {
 
 });
 
-routes.get('/test/:id', async (req, res) => {
+routes.get('/test/', async (req, res) => {
 
     let queriedResult = []
     let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
@@ -235,7 +235,7 @@ routes.get('/test/:id', async (req, res) => {
             { $unwind: '$results' },
             {
                 $match: {
-                    'results.title': { $regex: req.url.split("/")[2], $options: 'i' }
+                    'results.title': { $regex: req.query.name, $options: 'i' }
                 }
             },
             {
@@ -254,7 +254,8 @@ routes.get('/test/:id', async (req, res) => {
                     'results.yearOfRelease': 0,
 
                 }
-            }
+            },
+            { $limit: 6 }
 
         ]
     );
@@ -263,9 +264,13 @@ routes.get('/test/:id', async (req, res) => {
             queriedResult.push(item.results)
         }
     })
-    
+
     res.send(queriedResult)
 })
 
+routes.get('/tests/', (req, res) => {
+    console.log(req.query.name)
+    res.send(req.query)
+})
 
 module.exports = routes
