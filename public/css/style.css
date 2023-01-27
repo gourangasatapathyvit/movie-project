@@ -392,6 +392,10 @@
     transform: translate(55%, -30%);
 }
 
+.hamburger-container{
+    display: none;
+}
+
 /* media query */
 
 /* testing */
@@ -420,6 +424,7 @@
     }
 
     .hamburger-container {
+        display: block;
         width: 40%;
     }
 
