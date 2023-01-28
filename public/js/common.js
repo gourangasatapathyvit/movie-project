@@ -1,6 +1,15 @@
-let searchinput = document.getElementById('search-input')
+let searchinput = document.getElementById('default-search')
 let searchRecomendContainer = document.getElementById('search-recomend-container')
 let autoCommBox = document.querySelector('.autocom-box')
+
+const btn = document.querySelector("button.sidebar-open")
+const menu = document.querySelector(".menu-resposive")
+const buttonOpen = document.querySelector(".btn-open")
+const buttonClose = document.querySelector(".btn-close")
+
+const buttonMenu = document.querySelector("button.search-menu")
+const inputMethodContainer = document.querySelector(".search-section")
+const inputMethod = document.getElementById("default-search")
 
 function onSearchKeypress() {
 
@@ -12,9 +21,16 @@ function onSearchKeypress() {
         fetchList(e.target.value)
     }
 
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden")
+        formSearch.classList.toggle("hidden", true)
+        buttonOpen.classList.toggle("hidden"),
+            buttonClose.classList.toggle("hidden")
+    })
+
     window.addEventListener('click', function (e) {
 
-        if (!document.getElementById('search-input').contains(e.target)) {
+        if (!document.getElementById('default-search').contains(e.target)) {
             autoCommBox.classList.add('remove-display')
             autoCommBox.classList.remove('enable-display')
         }
@@ -25,20 +41,17 @@ function onSearchKeypress() {
     })
 
     window.addEventListener('scroll', (e) => {
-        document.getElementById("menu-bar").classList.remove("change");
-        document.getElementById("nav").classList.remove("change");
-        document.getElementById("menu-bg").classList.remove("change-bg");
-        document.getElementById("menu-bg").style.position = 'absolute'
-        document.getElementById("menu").style.position = 'absolute'
+        autoCommBox.classList.add('remove-display')
+        autoCommBox.classList.remove('enable-display')
+
+        inputMethodContainer.classList.add('relative', 'displayController')
+        inputMethodContainer.classList.remove('absolute', 'w-full', 'left-0', 'block')
     })
 
-    document.getElementById("menu-bar").addEventListener('click', () => {
-        document.getElementById("menu-bar").classList.toggle("change");
-        document.getElementById("nav").classList.toggle("change");
-        document.getElementById("menu-bg").classList.toggle("change-bg");
-        document.getElementById("menu-bg").style.position = 'fixed'
-        document.getElementById("menu").style.position = 'fixed'
-    
+    buttonMenu.addEventListener("click", (e) => {
+        inputMethodContainer.classList.remove('relative', 'displayController')
+        inputMethodContainer.classList.add('absolute', 'w-full', 'left-0', 'block')
+        inputMethod.classList.add('relative', 'block', 'w-full')
     })
 
 }

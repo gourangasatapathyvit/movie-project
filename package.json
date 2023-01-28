@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --ext *",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildtail": "tailwind build -i ./styles/tailwindcss.css -o ./public/css/test.css --watch",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run buildtail\""
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,10 @@
     "hbs": "4.2.0",
     "lodash": "4.17.21",
     "mongoose": "6.8.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }

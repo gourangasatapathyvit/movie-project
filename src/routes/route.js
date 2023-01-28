@@ -273,4 +273,29 @@ routes.get('/tests/', (req, res) => {
     res.send(req.query)
 })
 
+routes.get('/lorem', (req, res) => {
+    res.render('test', {
+        tData: [
+            {
+                'lorem': 1
+            },
+            {
+                'lorem': 2
+            },
+            {
+                'lorem': 3
+            },
+            {
+                'lorem': 4
+            },
+            {
+                'lorem': 5
+            },
+            {
+                'lorem': 6
+            }
+        ]
+    })
+})
+
 module.exports = routes
