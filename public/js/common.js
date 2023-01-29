@@ -6,6 +6,8 @@ const btn = document.querySelector("button.sidebar-open")
 const menu = document.querySelector(".menu-resposive")
 const buttonOpen = document.querySelector(".btn-open")
 const buttonClose = document.querySelector(".btn-close")
+const formSearch = document.querySelector(".search-form")
+
 
 const buttonMenu = document.querySelector("button.search-menu")
 const inputMethodContainer = document.querySelector(".search-section")
@@ -43,13 +45,15 @@ function onSearchKeypress() {
     window.addEventListener('scroll', (e) => {
         autoCommBox.classList.add('remove-display')
         autoCommBox.classList.remove('enable-display')
+        btn.classList.remove('hidden')
 
         inputMethodContainer.classList.add('relative', 'displayController')
         inputMethodContainer.classList.remove('absolute', 'w-full', 'left-0', 'block')
     })
 
     buttonMenu.addEventListener("click", (e) => {
-        inputMethodContainer.classList.remove('relative', 'displayController')
+        btn.classList.add('hidden')
+        inputMethodContainer.classList.remove('relative', 'displayController','hidden')
         inputMethodContainer.classList.add('absolute', 'w-full', 'left-0', 'block')
         inputMethod.classList.add('relative', 'block', 'w-full')
     })
