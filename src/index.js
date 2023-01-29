@@ -12,7 +12,7 @@ const routes = require('./routes/route');
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8092;
 const url = process.env.mongourl;
 // console.log(process.env.mongourl);
 

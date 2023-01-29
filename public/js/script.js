@@ -20,8 +20,9 @@ tableView.addEventListener('click', () => {
 
 listView.addEventListener('click', () => {
     cardBox.classList.add('remove-display')
-    cardBox.classList.remove('card-box-container')
     listBox.classList.add('enable-display')
+    cardBox.classList.remove('card-box-container')
+    listBox.classList.remove('remove-display')
 })
 
 onSearchKeypress();

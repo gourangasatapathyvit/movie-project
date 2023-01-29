@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.sorting-style {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sorting-style>span {
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sorting-style>span:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background: black;
+    color: white;
+}
+
+.remove-display {
+    display: none;
+}
+
+.list-card-footer {
+    display: flex;
+    padding: 5px;
+    bottom: 0;
+}
+
+.list-card-footer>a {
+    text-decoration: none;
+    padding: 2px;
+}
+
+.list-box {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+/* .list-box>h3 {
+    max-width: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 2rem;
+} */
+
+.list-box>h3 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+
+.list-card-footer {
+    display: flex;
+    padding: 5px;
+    bottom: 0;
+}
+
+.list-card-footer>a {
+    text-decoration: none;
+    padding: 2px;
+}
+
+.button-11 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    color: #3D3D3D;
+    background: #fff;
+    border: none;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-11:hover {
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
+.button-11:focus {
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+/* === */
+
+.autocom-box {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+}
+
+.autocom-box>li {
+    list-style: none;
+}
+
+.list-items {
+    list-style: none;
+}
+
+
+.form-inline {
+    display: flex;
+}
+
+.form-inline>input {
+    outline: none;
+    height: 2em;
+    border: none;
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+
+}
+
+.list-items {
+    padding: 10px 5px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.list-items:hover {
+    background-color: #aba5a5;
+}
+
+@media only screen and (max-width:767px){
+    .displayController{
+        display: none;
+    }
+}
