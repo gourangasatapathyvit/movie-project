@@ -274,7 +274,7 @@ routes.get('/tests/', (req, res) => {
 })
 
 routes.get('/lorem', (req, res) => {
-    res.render('test', {
+    res.render('test2', {
         tData: [
             {
                 'lorem': 1

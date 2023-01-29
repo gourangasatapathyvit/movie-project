@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" href="/static/css/test.css">
-
-    <title>Movi-Hub</title>
+    <title>Document</title>
 </head>
 
 <body>
+
     {{> navbar}}
 
     <section class="text-gray-600 body-font">
@@ -23,6 +25,7 @@
             <div class="relative lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
                 <img class="object-cover object-center w-full h-full" src="https://dummyimage.com/600x300" alt="stats">
                 <a class="absolute top-0 left-0" href="/bookmark/{{movieResultData._id}}">
+                    {{!-- fa-solid fa-regular --}}
                     <span id="add"><i class="fa-solid fa-bookmark"></i></span>
                 </a>
             </div>
@@ -45,7 +48,7 @@
                     <p class="leading-relaxed">Country</p>
                 </div>
                 <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium text-xl text-gray-900">{{movieResultData.productionHouse.[0]}}
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{movieResultData.productionHouse.[0]}}
                     </h2>
                     <p class="leading-relaxed">Production</p>
                 </div>
@@ -57,9 +60,12 @@
     <div class="bg-white py-2 ">
         <div class="lg:max-w-screen-xl sm:max-w-screen-sm px-8 md:px-8 mx-auto">
 
-            <h2 class="text-gray-800 text-xl sm:text-2xl font-semibold mb-2 md:mb-4">About The Movie</h2>
+            <h2 class="text-gray-800 text-xl sm:text-2xl font-semibold mb-2 md:mb-4">About us</h2>
 
-            <p class="text-gray-500 sm:text-lg mb-6 md:mb-8">{{movieResultData.overview}}</p>
+            <p class="text-gray-500 sm:text-lg mb-6 md:mb-8">This is a section of some simple filler text, also known as
+                placeholder text. It shares some characteristics of a real written text but is random or otherwise
+                generated. It may be used to display a sample of fonts or generate text for testing. Filler text is
+                dummy text which has no meaning however looks very similar to real text.</p>
 
         </div>
     </div>
@@ -91,7 +97,7 @@
     </section>
 
     <div class="flex justify-center">
-        <a href="#_"
+        <a  href="#_"
             class="inline-flex items-center justify-center h-12 px-6 m-2 font-medium tracking-wide text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-gray-800 focus:shadow-outline focus:outline-none">
             DownLoad
         </a>
@@ -105,8 +111,8 @@
 
     {{> footer}}
 
-    <script type="module" src="/static/js/moreInfo.js"></script>
 
+    <script type="module" src="/static/js/test.js"></script>
 </body>
 
 </html>
