@@ -14,6 +14,7 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 const PORT = process.env.PORT || 8092;
 const url = process.env.mongourl;
+mongoose.set('strictQuery', true)
 // console.log(process.env.mongourl);
 
 app.use('/static', express.static(path.join('public')))

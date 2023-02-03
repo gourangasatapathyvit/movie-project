@@ -1,17 +1,35 @@
 const express = require('express')
 const _ = require('lodash')
+const pagination = require('pagination');
 const mongoose = require("mongoose");
 const routes = express.Router()
 const moviesJson = require('../../public/data/movies.json')
 const mongomodels = require('../models/mongomodels')
 
+let paginator = ""
+let totalResultIn = 0
+let rowsPerPageIn = process.env.rowsPerPageIn
+
+function createPagination(prelinkIn, currentIn) {
+    paginator = pagination.create('search',
+        {
+            prelink: prelinkIn, current: currentIn, rowsPerPage: rowsPerPageIn, totalResult: totalResultIn
+        });
+}
+
 routes.get('/', async (req, res) => {
     console.log('triggered at => ' + req.url);
     let allMovieData = await mongomodels.movieMainPageSchema.find()
+    totalResultIn = allMovieData[0].results.length
+    createPagination('/', 1)
+    
+    // res.send(paginator.getPaginationData())
 
     res.render('index', {
-        movieData: allMovieData[0].results
+        movieData: allMovieData[0].results,
+        paginationData: paginator.getPaginationData(),
     })
+
     // console.log(allMovieData[0].results[0]);
 })
 
