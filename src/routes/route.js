@@ -6,7 +6,7 @@ const routes = express.Router()
 const moviesJson = require('../../public/data/movies.json')
 const mongomodels = require('../models/mongomodels')
 
-// let paginator = ""
+let queryMovie = ''
 let totalResultIn = 0
 let rowsPerPageIn = process.env.rowsPerPageIn
 
@@ -169,15 +169,53 @@ routes.get('/bookmarks/:movieId', async (req, res) => {
     res.redirect(`/`)
 })
 
-routes.post('/movie', async (req, res) => {
+async function searchData(param, tag, res) {
     let queriedResult = []
-    console.log('search: post req hitted');
+    let paginationResult = null
+
+    if (tag == "POST") {
+        if (param == undefined) {
+            queryMovie = ' '
+        }
+        else {
+            queryMovie = param.trim().split(" ").join("|")
+        }
+
+    }
+
     let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
         [
             { $unwind: '$results' },
             {
                 $match: {
-                    'results.title': { $regex: req.body.moviename.trim().split(" ").join("|"), $options: 'i' }
+                    'results.title': { $regex: queryMovie, $options: 'i' }
+                }
+            },
+            { "$count": "count" }
+        ]
+    );
+
+    totalResultIn = resultsRegex[0].count
+
+    if (param == undefined || param == null || param == '') {
+        paginationResult = createPagination('/movie', parseInt(1))
+        
+    }
+    else if (tag == 'POST') {
+        paginationResult = createPagination('/movie', parseInt(1))
+    }
+    else {
+        paginationResult = createPagination('/movie', parseInt(param))
+    }
+    
+    let paginationData = paginationResult.getPaginationData()
+
+    let resultsRegexx = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            { $unwind: '$results' },
+            {
+                $match: {
+                    'results.title': { $regex: queryMovie, $options: 'i' }
                 }
             },
             {
@@ -185,19 +223,32 @@ routes.post('/movie', async (req, res) => {
                     _id: 0,
                     '__v': 0
                 }
-            }
+            },
+            { $skip: paginationData.fromResult - 1 },
+            { $limit: (paginationData.toResult - paginationData.fromResult) + 1 },
 
         ]
     );
-    _.each(resultsRegex, function (item) {
+
+    _.each(resultsRegexx, function (item) {
         if (resultsRegex) {
             queriedResult.push(item.results)
         }
     })
 
     res.render('index', {
-        movieData: queriedResult
+        movieData: queriedResult,
+        paginationData: paginationData
     })
+
+}
+
+routes.post('/movie', async (req, res) => {
+    searchData(req.body.moviename, 'POST', res)
+})
+
+routes.get('/movie', async (req, res) => {
+    searchData(req.query.pageno, 'GET', res)
 })
 
 routes.get('/movies', async (req, res) => {
