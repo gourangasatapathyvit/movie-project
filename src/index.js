@@ -23,11 +23,39 @@ app.set('view engine', 'hbs')
 app.set('views', 'views')
 hbs.registerPartials('views/partials')
 
+hbs.registerHelper('ifCond', function (v1, operator, v2, options) {
+
+    switch (operator) {
+        case '==':
+            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+        case '===':
+            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        case '!=':
+            return (v1 != v2) ? options.fn(this) : options.inverse(this);
+        case '!==':
+            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '<':
+            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+        case '<=':
+            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+        case '>':
+            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+        case '>=':
+            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+        case '&&':
+            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+        case '||':
+            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+        default:
+            return options.inverse(this);
+    }
+});
+
 
 mongoose.connect(url, async () => {
     // let query = { '_id': mongoose.Types.ObjectId('63b97479ac1eede3ef4f0044') }
     // mongomodels.movieMainPageSchema.create(movieJson)
-    
+
     /* let upDateresult = await mongomodels.testschema.updateMany(
         query,
         {
@@ -73,33 +101,33 @@ mongoose.connect(url, async () => {
         ]
     ); */
 
-  /*   let results = await mongomodels.movieMainPageSchema.aggregate(
-        [
-            {
-                $project: {
-                    _id: 0,  // to supress id
-                    results: {
-                        $filter: {
-                            input: "$results",
-                            as: "result",
-                            cond: { $eq: ["$$result.title", "The Kashmir Files"] }
-                            // cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63ba4ab0818099c9bf301566')] }
-                            // cond: {$in: [ "$$result.title", ['The Kashmir Files'] ] }
-
-                            // cond: {
-                            //     $regexMatch: {
-                            //         input: "$$result.title",
-                            //         regex: "Kashmir"
-                            //     }
-                            // }
-
-
-                        }
-                    }
-                }
-            }
-        ]
-    ); */
+    /*   let results = await mongomodels.movieMainPageSchema.aggregate(
+          [
+              {
+                  $project: {
+                      _id: 0,  // to supress id
+                      results: {
+                          $filter: {
+                              input: "$results",
+                              as: "result",
+                              cond: { $eq: ["$$result.title", "The Kashmir Files"] }
+                              // cond: { $eq: ["$$result._id", mongoose.Types.ObjectId('63ba4ab0818099c9bf301566')] }
+                              // cond: {$in: [ "$$result.title", ['The Kashmir Files'] ] }
+  
+                              // cond: {
+                              //     $regexMatch: {
+                              //         input: "$$result.title",
+                              //         regex: "Kashmir"
+                              //     }
+                              // }
+  
+  
+                          }
+                      }
+                  }
+              }
+          ]
+      ); */
     // console.log(resultsRegex);
     console.log('mongo is connected');
 })
