@@ -19,33 +19,6 @@ function createPagination(prelinkIn, currentIn) {
 
 routes.get('/', async (req, res) => {
     let paginationResult = null
-    console.log('triggered at => ' + req.url);
-
-    if (req.query.pageno == undefined) {
-        paginationResult = await paginationFunc(1)
-    }
-    else {
-        paginationResult = await paginationFunc(req.query.pageno)
-    }
-
-    res.render('index', {
-        movieData: paginationResult[0],
-        paginationData: paginationResult[1]
-    })
-
-})
-
-routes.get('/searchpage/', async (req, res) => {
-    let paginationResult = await paginationFunc(req.query.pageno)
-
-    res.render('index', {
-        movieData: paginationResult[0],
-        paginationData: paginationResult[1]
-    })
-})
-
-
-async function paginationFunc(pageNo) {
     let queriedResult = []
 
     let count = await mongomodels.movieMainPageSchema.aggregate(
@@ -56,8 +29,15 @@ async function paginationFunc(pageNo) {
     );
 
     totalResultIn = count[0].count
-    let resultData = createPagination('/searchpage', parseInt(pageNo))
-    let paginationData = resultData.getPaginationData()
+
+    if (req.query.pageno == undefined) {
+        paginationResult = createPagination('/', parseInt(1))
+    }
+    else {
+        paginationResult = createPagination('/', parseInt(req.query.pageno))
+    }
+
+    let paginationData = paginationResult.getPaginationData()
 
     let resultsRegex = await mongomodels.movieMainPageSchema.aggregate(
         [
@@ -78,9 +58,12 @@ async function paginationFunc(pageNo) {
         }
     })
 
-    return [queriedResult, paginationData]
+    res.render('index', {
+        movieData: queriedResult,
+        paginationData: paginationData
+    })
 
-}
+})
 
 routes.get('/more-info/:id', async (req, res) => {
     console.log('triggered each movie => ' + req.url.split('/')[2]);
@@ -147,7 +130,6 @@ routes.get('/bookmark/:movieId', async (req, res) => {
     res.redirect(`/more-info/${req.url.split('/')[2]}`)
 })
 
-
 routes.get('/bookmarks/:movieId', async (req, res) => {
     let query = { 'results._id': mongoose.Types.ObjectId(req.url.split('/')[2]) }
     let queryTag = ''
@@ -186,7 +168,6 @@ routes.get('/bookmarks/:movieId', async (req, res) => {
 
     res.redirect(`/`)
 })
-
 
 routes.post('/movie', async (req, res) => {
     let queriedResult = []
@@ -242,13 +223,10 @@ routes.get('/movies', async (req, res) => {
 
     if (req.query.pageno == undefined) {
         resultData = createPagination('/movies', 1)
-
     }
     else {
         resultData = createPagination('/movies', parseInt(req.query.pageno))
     }
-
-
 
     let paginationInfo = resultData.getPaginationData()
 
@@ -262,6 +240,40 @@ routes.get('/movies', async (req, res) => {
 
 routes.get('/series', async (req, res) => {
     let resultData = null
+    let queriedResult = []
+
+    let seriesLength = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result.itemsInformation.itemType", 'Series'] }
+                        },
+
+                    }
+                },
+
+            },
+            { $unwind: '$results' },
+            { $count: 'count' }
+        ]
+    );
+
+    totalResultIn = seriesLength[0].count
+
+    if (req.query.pageno == undefined) {
+        resultData = createPagination('/series', 1)
+
+    }
+    else {
+        resultData = createPagination('/series', parseInt(req.query.pageno))
+    }
+
+    let paginationData = resultData.getPaginationData()
 
     let seriesData = await mongomodels.movieMainPageSchema.aggregate(
         [
@@ -273,28 +285,28 @@ routes.get('/series', async (req, res) => {
                             input: "$results",
                             as: "result",
                             cond: { $eq: ["$$result.itemsInformation.itemType", 'Series'] }
-                        }
+                        },
+
                     }
-                }
-            }
+                },
+
+            },
+            { $unwind: '$results' },
+            { $skip: paginationData.fromResult - 1 },
+            { $limit: (paginationData.toResult - paginationData.fromResult) + 1 },
         ]
     );
-    
-    totalResultIn = seriesData[0].results.length
 
-    if (req.query.pageno == undefined) {
-        resultData = createPagination('/series', 1)
 
-    }
-    else {
-        resultData = createPagination('/series', parseInt(req.query.pageno))
-    }
-
-    let paginationInfo = resultData.getPaginationData()
+    _.each(seriesData, function (item) {
+        if (seriesData) {
+            queriedResult.push(item.results);
+        }
+    })
 
     res.render('index', {
-        movieData: seriesData[0].results,
-        paginationData: paginationInfo
+        movieData: queriedResult,
+        paginationData: paginationData
     })
 
 });
