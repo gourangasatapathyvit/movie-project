@@ -30,7 +30,7 @@ routes.get('/', async (req, res) => {
 
     totalResultIn = count[0].count
 
-    if (req.query.pageno == undefined) {
+    if (req.query.pageno == undefined || req.query.pageno == null || req.query.pageno == '') {
         paginationResult = createPagination('/', parseInt(1))
     }
     else {
@@ -199,7 +199,7 @@ async function searchData(param, tag, res) {
 
     if (param == undefined || param == null || param == '') {
         paginationResult = createPagination('/movie', parseInt(1))
-        
+
     }
     else if (tag == 'POST') {
         paginationResult = createPagination('/movie', parseInt(1))
@@ -207,7 +207,7 @@ async function searchData(param, tag, res) {
     else {
         paginationResult = createPagination('/movie', parseInt(param))
     }
-    
+
     let paginationData = paginationResult.getPaginationData()
 
     let resultsRegexx = await mongomodels.movieMainPageSchema.aggregate(
@@ -252,8 +252,11 @@ routes.get('/movie', async (req, res) => {
 })
 
 routes.get('/movies', async (req, res) => {
+
     let resultData = null
-    let movieData = await mongomodels.movieMainPageSchema.aggregate(
+    let queriedResult = []
+
+    let seriesLength = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
                 $project: {
@@ -263,30 +266,61 @@ routes.get('/movies', async (req, res) => {
                             input: "$results",
                             as: "result",
                             cond: { $eq: ["$$result.itemsInformation.itemType", 'Movie'] }
-                        }
+                        },
+
                     }
-                }
-            }
+                },
+
+            },
+            { $unwind: '$results' },
+            { $count: 'count' }
         ]
     );
 
-    totalResultIn = movieData[0].results.length
+    totalResultIn = seriesLength[0].count
 
-    if (req.query.pageno == undefined) {
+    if (req.query.pageno == undefined || req.query.pageno == null || req.query.pageno == '') {
         resultData = createPagination('/movies', 1)
     }
     else {
         resultData = createPagination('/movies', parseInt(req.query.pageno))
     }
 
-    let paginationInfo = resultData.getPaginationData()
+    let paginationData = resultData.getPaginationData()
+
+    let seriesData = await mongomodels.movieMainPageSchema.aggregate(
+        [
+            {
+                $project: {
+                    _id: 0,  // to supress id
+                    results: {
+                        $filter: {
+                            input: "$results",
+                            as: "result",
+                            cond: { $eq: ["$$result.itemsInformation.itemType", 'Movie'] }
+                        },
+
+                    }
+                },
+
+            },
+            { $unwind: '$results' },
+            { $skip: paginationData.fromResult - 1 },
+            { $limit: (paginationData.toResult - paginationData.fromResult) + 1 },
+        ]
+    );
 
 
-    res.render('index', {
-        movieData: movieData[0].results,
-        paginationData: paginationInfo
+    _.each(seriesData, function (item) {
+        if (seriesData) {
+            queriedResult.push(item.results);
+        }
     })
 
+    res.render('index', {
+        movieData: queriedResult,
+        paginationData: paginationData
+    })
 });
 
 routes.get('/series', async (req, res) => {
@@ -316,7 +350,7 @@ routes.get('/series', async (req, res) => {
 
     totalResultIn = seriesLength[0].count
 
-    if (req.query.pageno == undefined) {
+    if (req.query.pageno == undefined || req.query.pageno == null || req.query.pageno == '') {
         resultData = createPagination('/series', 1)
 
     }
