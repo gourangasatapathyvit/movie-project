@@ -26,7 +26,7 @@ function onSearchKeypress() {
     btn.addEventListener("click", () => {
         menu.classList.toggle("hidden")
         formSearch.classList.toggle("hidden")
-        buttonOpen.classList.toggle("hidden"),
+        buttonOpen.classList.toggle("hidden")
         buttonClose.classList.toggle("hidden")
     })
 
