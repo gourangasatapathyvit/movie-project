@@ -8,21 +8,43 @@ let listView = document.getElementById('list-view')
 
 let cardBox = document.querySelector('.card-box-container')
 let listBox = document.querySelector('.list-box-container')
-listBox.classList.add('remove-display')
+
+
+window.onload = () => {
+    if (localStorage.getItem("viewType") == null || localStorage.getItem("viewType") == undefined) {
+        listBox.classList.add('remove-display')
+    }
+    else if (localStorage.getItem("viewType") == 'tableView') {
+        tableViewCaller()
+    }
+    else {
+        listViewCaller()
+
+    }
+};
 
 
 tableView.addEventListener('click', () => {
-    cardBox.classList.add("card-box-container")
-    cardBox.classList.remove('remove-display')
-    listBox.classList.add('remove-display')
-    listBox.classList.remove('enable-display')
+    tableViewCaller()
 })
 
 listView.addEventListener('click', () => {
-    cardBox.classList.add('remove-display')
-    listBox.classList.add('enable-display')
-    cardBox.classList.remove('card-box-container')
-    listBox.classList.remove('remove-display')
+    listViewCaller()
 })
 
+function tableViewCaller() {
+    localStorage.setItem("viewType", "tableView");
+    listBox.classList.remove('enable-display')
+    cardBox.classList.remove('remove-display')
+    listBox.classList.add('remove-display')
+    cardBox.classList.add("card-box-container")
+}
+
+function listViewCaller() {
+    localStorage.setItem("viewType", "listView");
+    cardBox.classList.remove('card-box-container')
+    listBox.classList.remove('remove-display')
+    cardBox.classList.add('remove-display')
+    listBox.classList.add('enable-display')
+}
 onSearchKeypress();
