@@ -72,7 +72,7 @@ function colorChange() {
     }
 
     for (const property of liLists) {
-        let title = property.textContent.trim().toLocaleLowerCase()
+        let title = property.textContent.trim().toLocaleLowerCase().split(' ').join('')
 
         if (urlAttributes === title) {
             property.classList.add('text-yellow-500')

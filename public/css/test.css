@@ -1268,17 +1268,6 @@ video {
   padding-top: 1.5rem;
 }
 
-/* .list-box>h3 {
-    max-width: 5px;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 2rem;
-} */
-
-/* .list-box>h3 {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 1.5rem;
-} */
-
 .list-card-footer {
   display: flex;
   padding: 5px;
@@ -1358,12 +1347,12 @@ video {
   background-color: #aba5a5;
 }
 
-.list-box-container{
+.list-box-container {
   padding: 2rem;
 }
 
-@media only screen and (max-width:767px){
-  .displayController{
+@media only screen and (max-width:767px) {
+  .displayController {
     display: none;
   }
 }
