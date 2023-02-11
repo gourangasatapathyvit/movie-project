@@ -40,14 +40,21 @@
     <div class="list-box-container remove-display">
         {{#each movieData}}
         <div class="list-box">
-            <h3>{{this.title}}</h3>
+            <h3 class="sm:text-xl md:text-2xl">{{this.title}}</h3>
             <div class="list-card-footer">
                 <a href="more-info/{{this._id}}">
-                    <button class="button-11 card-footer-button" id="more-info">More Info</button>
+                    <button
+                        class="esm:hidden h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">info</button>
+
+                        <button class="hidden esm:block h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">info</button>
+                        
                 </a>
 
                 <a href="more-info/moreInfo.html">
-                    <button class="button-11 card-footer-button" id="fav-info">Watch Later</button>
+                    <button
+                        class="esm:hidden h-8 px-4 m-2 text-sm text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">save</button>
+                        
+                        <button class="hidden esm:block h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">save</button>
                 </a>
             </div>
         </div>

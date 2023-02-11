@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/*"],
+  content: ["./views/*","./views/partials/*"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'esm': '426px',
+      },
+    },
   },
   plugins: [],
 }
