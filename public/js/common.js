@@ -21,6 +21,8 @@ function onSearchKeypress() {
     })
 
     searchinput.onkeyup = (e) => {
+        autoCommBox.classList.remove('remove-display')
+        autoCommBox.classList.add("enable-display")
         fetchList(e.target.value)
     }
 
