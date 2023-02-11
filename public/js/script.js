@@ -1,6 +1,6 @@
 // https://docs.google.com/spreadsheets/d/1G1xN6bCLPB4cRckpqe-tI9hXcovig-1DmiGY_--Bqz0/edit#gid=0
 
-import { onSearchKeypress } from './common.js'
+import { onSearchKeypress,colorChange } from './common.js'
 
 
 let tableView = document.getElementById('table-view')
@@ -11,6 +11,8 @@ let listBox = document.querySelector('.list-box-container')
 
 
 window.onload = () => {
+    colorChange()
+    
     if (localStorage.getItem("viewType") == null || localStorage.getItem("viewType") == undefined) {
         listBox.classList.add('remove-display')
     }

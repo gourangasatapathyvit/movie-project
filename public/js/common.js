@@ -12,6 +12,7 @@ const formSearch = document.querySelector(".search-form")
 const buttonMenu = document.querySelector("button.search-menu")
 const inputMethodContainer = document.querySelector(".search-section")
 const inputMethod = document.getElementById("default-search")
+const navEle = document.getElementById("navEle")
 
 function onSearchKeypress() {
 
@@ -53,11 +54,31 @@ function onSearchKeypress() {
 
     buttonMenu.addEventListener("click", (e) => {
         btn.classList.add('hidden')
-        inputMethodContainer.classList.remove('relative', 'displayController','hidden')
+        inputMethodContainer.classList.remove('relative', 'displayController', 'hidden')
         inputMethodContainer.classList.add('absolute', 'w-full', 'left-0', 'block')
         inputMethod.classList.add('relative', 'block', 'w-full')
     })
 
+}
+
+function colorChange() {
+    let urlAttributes = window.location.href.substring('7').split('/')[1].toLocaleLowerCase()
+    let liLists = navEle.getElementsByTagName("li")
+
+    if (urlAttributes === '') {
+        urlAttributes = 'home'
+    }
+
+    for (const property of liLists) {
+        let title = property.textContent.trim().toLocaleLowerCase()
+
+        if (urlAttributes === title) {
+            property.classList.add('text-yellow-500')
+        }
+        else {
+            property.classList.remove('text-yellow-500')
+        }
+    }
 }
 
 function fetchList(value) {
@@ -98,4 +119,4 @@ function fetchList(value) {
         })
 }
 
-export { onSearchKeypress }
+export { onSearchKeypress, colorChange }
