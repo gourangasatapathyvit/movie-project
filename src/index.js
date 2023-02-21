@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose')
 const hbs = require("hbs")
+const exphbs = require('express-handlebars');
 const path = require('path')
 const mongomodels = require('./models/mongomodels')
 const axios = require('axios')
@@ -44,6 +45,7 @@ const imageurl = 'https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the
 
 // imageUpload(imageurl, process.env.imgurAccessToken, { width: 712, height: 400 })
 
+
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 const PORT = process.env.PORT || 8092;
@@ -51,6 +53,7 @@ const url = process.env.mongourl;
 mongoose.set('strictQuery', true)
 // console.log(process.env.mongourl);
 
+app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.use('/static', express.static(path.join('public')))
 app.use('/', routes)
 app.set('view engine', 'hbs')
