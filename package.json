@@ -27,6 +27,7 @@
     "hbs": "4.2.0",
     "lodash": "4.17.21",
     "mongoose": "6.8.2",
+    "nodemon": "^2.0.20",
     "pagination": "0.4.6"
   },
   "devDependencies": {
