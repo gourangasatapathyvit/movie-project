@@ -1,0 +1,18 @@
+[
+    {
+        "title": "The NG group",
+        "description": "Meet Our Team",
+        "teamMember": [
+            {
+                "name": "NG group",
+                "imagePath": "https://dummyimage.com/200x200",
+                "description": "designed frontend,backend & data layer",
+                "socialMediaLink": {
+                    "facebook": "https://www.facebook.com",
+                    "twitter": "https://www.twitter.com",
+                    "linkedin": "https://www.linkedin.com"
+                }
+            }
+        ]
+    }
+]

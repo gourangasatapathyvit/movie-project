@@ -7,8 +7,42 @@ const mongomodels = require('./models/mongomodels')
 const axios = require('axios')
 let bodyParser = require('body-parser')
 let movieJson = require('../public/data/movieJsonStructure.json')
+let aboutJson = require('../public/data/aboutData.json')
 
 const routes = require('./routes/route');
+const imageUpload = require('./customfunc');
+
+const imageurl = 'https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg'
+
+/*     let xx =await mongomodels.movieMainPageSchema.find({},"_id")
+  
+      let x =await mongomodels.movieMainPageSchema.updateOne({
+          "_id": xx[0]._id
+      },
+          {
+              "$push":
+              {
+                  "results":
+                  {
+                      "yearOfRelease": "2032",
+                      "imagePath": "https://lorem",
+                      "title": "lorem test",
+                      "overview": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone",
+                      "originalLanguage": "en",
+                      "imdbRating": "8.3",
+                      "originCountry": "United States of America",
+                      "productionHouse": [
+                          "DC Comics"
+                      ],
+                      "itemsInformation": {
+                          "itemType": "Movie"
+                      }
+                  }
+              }
+          }); */
+
+
+// imageUpload(imageurl, process.env.imgurAccessToken, { width: 712, height: 400 })
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -55,6 +89,35 @@ hbs.registerHelper('ifCond', function (v1, operator, v2, options) {
 mongoose.connect(url, async () => {
     // let query = { '_id': mongoose.Types.ObjectId('63b97479ac1eede3ef4f0044') }
     // mongomodels.movieMainPageSchema.create(movieJson)
+    // mongomodels.aboutSchema.create(aboutJson)
+
+    /*     let xx =await mongomodels.movieMainPageSchema.find({},"_id")
+    
+        let x =await mongomodels.movieMainPageSchema.updateOne({
+            "_id": xx[0]._id
+        },
+            {
+                "$push":
+                {
+                    "results":
+                    {
+                        "yearOfRelease": "2032",
+                        "imagePath": "https://lorem",
+                        "title": "lorem test",
+                        "overview": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone",
+                        "originalLanguage": "en",
+                        "imdbRating": "8.3",
+                        "originCountry": "United States of America",
+                        "productionHouse": [
+                            "DC Comics"
+                        ],
+                        "itemsInformation": {
+                            "itemType": "Movie"
+                        }
+                    }
+                }
+            }); */
+
 
     /* let upDateresult = await mongomodels.testschema.updateMany(
         query,

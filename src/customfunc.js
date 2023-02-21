@@ -48,18 +48,18 @@ async function uploadToImgurPublic(image) {
     });
 }
 
-const urlPublic = 'https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg';
-resizeImagePublic(urlPublic, { width: 712, height: 400 })
-    .then(image => uploadToImgurPublic(image))
-    .then(link => console.log(link))
-    .catch(error => console.error(error));
+// const urlPublic = 'https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg';
+// resizeImagePublic(urlPublic, { width: 712, height: 400 })
+//     .then(image => uploadToImgurPublic(image))
+//     .then(link => console.log(link))
+//     .catch(error => console.error(error));
 
 
 // ====================
 
 // publsh to user profile URL 
-const request = require('request');
-const canvass = require('canvas');
+// const request = require('request');
+// const canvass = require('canvas');
 
 async function resizeImage(url, size = { width: 256, height: 256 }) {
     const image = new canvass.Image();
@@ -106,10 +106,12 @@ async function uploadToImgur(image, accessToken) {
     });
 }
 
-const url = 'https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg';
-const accessToken = '860d08a689dcaee25f977295e5b30cf817dd38f2';
-// resizeImage(url, { width: 712, height: 400 })
-//     .then(image => uploadToImgur(image, accessToken))
-//     .then(link => console.log(link))
-//     .catch(error => console.error(error));
 
+function imageUpload(url,accessToken, size) {
+    resizeImage(url, { width: 712, height: 400 })
+        .then(image => uploadToImgur(image, accessToken))
+        .then(link => console.log(link))
+        .catch(error => console.error(error));
+}
+
+module.exports = imageUpload

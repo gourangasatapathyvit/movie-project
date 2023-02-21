@@ -15,7 +15,7 @@ const testschema = mongoose.Schema({
         type: Boolean,
         default: true
     },
-},{strict:false})
+}, { strict: false })
 
 const movieMainPageSchema = mongoose.Schema({
     results: [
@@ -33,16 +33,16 @@ const movieMainPageSchema = mongoose.Schema({
             originCountry: String,
             productionHouse: [String],
 
-            itemsInformation:{
-                itemType:{
+            itemsInformation: {
+                itemType: {
                     type: String,
                     default: "not-defined"
                 },
-                NumberOfSeasons:{
+                NumberOfSeasons: {
                     type: Number,
                     default: 0
                 },
-                NumberOfEpisods:{
+                NumberOfEpisods: {
                     type: Number,
                     default: 0
                 }
@@ -51,7 +51,30 @@ const movieMainPageSchema = mongoose.Schema({
     ]
 })
 
+const aboutSchema = mongoose.Schema([
+    {
+        title: {
+            type: String,
+            default: String
+        },
+        description: String,
+        teamMember: [
+            {
+                name: String,
+                imagePath: String,
+                description: String,
+                socialMediaLink: {
+                    facebook: String,
+                    twitter: String,
+                    linkedin: String
+                }
+            }
+        ]
+    }
+])
+
 module.exports = {
     testschema: mongoose.model('testschemaCollection', testschema),
-    movieMainPageSchema: mongoose.model('movieMainPage', movieMainPageSchema)
+    movieMainPageSchema: mongoose.model('movieMainPage', movieMainPageSchema),
+    aboutSchema: mongoose.model('aboutSection', aboutSchema),
 }

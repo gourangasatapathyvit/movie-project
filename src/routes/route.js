@@ -421,6 +421,16 @@ routes.get('/watchlater', async (req, res) => {
 
 });
 
+routes.get('/about', async (req, res) => {
+    let aboutPageData = await mongomodels.aboutSchema.find()
+
+    // res.send(aboutPageData)
+    
+    res.render('about', {
+        aboutPageDatas:aboutPageData[0]
+    })
+})
+
 routes.get('/test/', async (req, res) => {
 
     let queriedResult = []
