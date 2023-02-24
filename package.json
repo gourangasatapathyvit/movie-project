@@ -2,11 +2,12 @@
   "name": "movie-project",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "nodemon --ext *",
+    "start": "node ./src/index.js",
+    "startmon": "nodemon --ext *",
     "buildtail": "tailwind build -i ./styles/tailwindcss.css -o ./public/css/test.css --watch",
-    "dev": "concurrently --kill-others \"npm run start\" \"npm run buildtail\""
+    "dev": "concurrently --kill-others \"npm run startmon\" \"npm run buildtail\""
   },
   "repository": {
     "type": "git",
