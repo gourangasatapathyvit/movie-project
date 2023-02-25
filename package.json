@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "startmon": "nodemon --ext *",
+    "startpm2": "pm2 start ./ecosystem.config.js",
     "buildtail": "tailwind build -i ./styles/tailwindcss.css -o ./public/css/test.css --watch",
     "dev": "concurrently --kill-others \"npm run startmon\" \"npm run buildtail\""
   },
@@ -28,7 +29,8 @@
     "hbs": "4.2.0",
     "lodash": "4.17.21",
     "mongoose": "6.8.2",
-    "pagination": "0.4.6"
+    "pagination": "0.4.6",
+    "pm2": "^5.2.2"
   },
   "devDependencies": {
     "autoprefixer": "10.4.13",
