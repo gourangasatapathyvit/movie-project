@@ -64,7 +64,7 @@ function onSearchKeypress() {
 }
 
 function colorChange() {
-    let urlAttributes = window.location.href.substring('7').split('/')[1].toLocaleLowerCase()
+    let urlAttributes = window.location.href.substring('8').split('/')[1].toLocaleLowerCase()
     let liLists = navEle.getElementsByTagName("li")
 
     if (urlAttributes === '') {
