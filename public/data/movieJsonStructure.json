@@ -3,71 +3,13 @@
     {
       "yearOfRelease": "2022",
       "imagePath": "https://upload.wikimedia.org/wikipedia/en/d/d4/The_Kashmir_Files_poster.jpg",
+      "moreInfoTitleImage":"https://upload.wikimedia.org/wikipedia/en/d/d4/The_Kashmir_Files_poster.jpg",
       "title": "The Kashmir Files",
       "overview": "Krishna endeavours to uncover the reason behind his parents' brutal killings in Kashmir. He is shocked to uncover a web of lies and conspiracies in connection with the massive genocide.",
       "originalLanguage": "hi",
       "imdbRating": "8.3",
       "originCountry": "india",
-      "productionHouse": [
-        "Zee Studios"
-      ],
-      "itemsInformation": {
-        "itemType": "Movie"
-      }
-    },
-    {
-      "yearOfRelease": "2022",
-      "imagePath": "https://upload.wikimedia.org/wikipedia/en/a/a9/Black_Adam_%28film%29_poster.jpg",
-      "title": "Black Adam",
-      "overview": "In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone",
-      "originalLanguage": "en",
-      "imdbRating": "8.3",
-      "originCountry": "United States of America",
-      "productionHouse": [
-        "DC Comics"
-      ],
-      "itemsInformation": {
-        "itemType": "Movie"
-      }
-    },
-    {
-      "yearOfRelease": "2022",
-      "imagePath": "https://upload.wikimedia.org/wikipedia/en/0/09/The_Sea_Beast_film_poster.png",
-      "title": "The Sea Beast",
-      "overview": "A young girl stows away on the ship of a legendary sea monster hunter, turning his life upside down as they venture into uncharted waters.",
-      "originalLanguage": "en",
-      "imdbRating": "7.1",
-      "originCountry": "United States Canada",
-      "productionHouse": [
-        "Netflix Animation"
-      ],
-      "itemsInformation": {
-        "itemType": "Movie"
-      }
-    },
-    {
-      "yearOfRelease": "2021",
-      "imagePath": "https://upload.wikimedia.org/wikipedia/en/7/7d/Hum_Do_Hamare_Do_poster.jpg",
-      "title": "Hum Do Hamare Do",
-      "overview": "Dhruv, who grew up an orphan, is in love with a woman who wishes to marry someone with a family. In order to fulfil his lover's wish, he hires two older individuals to pose as his parents.",
-      "originalLanguage": "hi",
-      "imdbRating": "6.0",
-      "originCountry": "india",
-      "productionHouse": [
-        "Maddock Films"
-      ]
-    },
-    {
-      "yearOfRelease": "2021",
-      "imagePath": "https://upload.wikimedia.org/wikipedia/en/7/74/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg",
-      "title": "Shang-Chi and the Legend of the Ten Rings",
-      "overview": "Shang-Chi, a martial artist, lives a quiet life after he leaves his father and the shadowy Ten Rings organisation behind. Years later, he is forced to confront his past when the Ten Rings attack him.",
-      "originalLanguage": "en",
-      "imdbRating": "7.4",
-      "originCountry": "United States of America",
-      "productionHouse": [
-        "Marvel Entertainment"
-      ],
+      "productionHouse": ["Zee Studios"],
       "itemsInformation": {
         "itemType": "Movie"
       }
@@ -75,14 +17,13 @@
     {
       "yearOfRelease": "2019",
       "imagePath": "https://upload.wikimedia.org/wikipedia/en/d/dc/The_Family_Man.jpeg",
+      "moreInfoTitleImage":"https://upload.wikimedia.org/wikipedia/en/d/dc/The_Family_Man.jpeg",
       "title": "The Family Man",
       "overview": "Srikant Tiwari is a middle-class man who also serves as a world-class spy; he tries to balance his familial responsibilities with those at the highly secretive special cell of the National Intelligence Agency.",
       "originalLanguage": "hi",
       "imdbRating": "7.4",
       "originCountry": "india",
-      "productionHouse": [
-        "D2R Films"
-      ],
+      "productionHouse": ["D2R Films"],
       "itemsInformation": {
         "itemType": "Series",
         "NumberOfSeasons": 2,

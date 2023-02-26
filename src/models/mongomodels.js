@@ -4,77 +4,83 @@
 
 // https://stackblitz.com/
 
+const mongoose = require("mongoose");
 
-const mongoose = require('mongoose')
-
-
-const testschema = mongoose.Schema({
+const testschema = mongoose.Schema(
+  {
     name: String,
     id: Number,
     isUsed: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true,
     },
-}, { strict: false })
+  },
+  { strict: false }
+);
 
 const movieMainPageSchema = mongoose.Schema({
-    results: [
-        {
-            yearOfRelease: String,
-            imagePath: String,
-            title: String,
-            overview: String,
-            originalLanguage: String,
-            imdbRating: String,
-            bookMarkStatus: {
-                type: String,
-                default: "fa-regular"
-            },
-            originCountry: String,
-            productionHouse: [String],
+  results: [
+    {
+      yearOfRelease: String,
+      imagePath: String,
+      moreInfoTitleImage: String,
+      allImageQualityLink: {
+        type: Array,
+        default: ["https://dummyimage.com/720x400"],
+      },
+      title: String,
+      overview: String,
+      originalLanguage: String,
+      imdbRating: String,
+      bookMarkStatus: {
+        type: String,
+        default: "fa-regular",
+      },
+      originCountry: String,
+      productionHouse: [String],
 
-            itemsInformation: {
-                itemType: {
-                    type: String,
-                    default: "not-defined"
-                },
-                NumberOfSeasons: {
-                    type: Number,
-                    default: 0
-                },
-                NumberOfEpisods: {
-                    type: Number,
-                    default: 0
-                }
-            }
-        }
-    ]
-})
+      itemsInformation: {
+        itemType: {
+          type: String,
+          default: "not-defined",
+        },
+        NumberOfSeasons: {
+          type: Number,
+          default: 0,
+        },
+        NumberOfEpisods: {
+          type: Number,
+          default: 0,
+        },
+      },
+    },
+  ],
+});
 
 const aboutSchema = mongoose.Schema([
-    {
-        title: {
-            type: String,
-            default: String
-        },
+  {
+    title: {
+      type: String,
+      default: String,
+    },
+    description: String,
+    teamMember: [
+      {
+        name: String,
+        imagePath: String,
         description: String,
-        teamMember: [
-            {
-                name: String,
-                imagePath: String,
-                description: String,
-                socialMediaLink: {
-                    facebook: String,
-                    twitter: String,
-                    linkedin: String
-                }
-            }
-        ]
-    }
-])
+        socialMediaLink: {
+          facebook: String,
+          twitter: String,
+          linkedin: String,
+        },
+      },
+    ],
+  },
+]);
 
 module.exports = {
-    testschema: mongoose.model('testschemaCollection', testschema),
-    movieMainPageSchema: mongoose.model('movieMainPage', movieMainPageSchema),
-    aboutSchema: mongoose.model('aboutSection', aboutSchema),
-}
+  testschema: mongoose.model("testschemaCollection", testschema),
+  movieMainPageSchema: mongoose.model("movieMainPage", movieMainPageSchema),
+  aboutSchema: mongoose.model("aboutSection", aboutSchema),
+};

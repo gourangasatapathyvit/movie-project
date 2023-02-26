@@ -66,7 +66,6 @@ routes.get('/', async (req, res) => {
 })
 
 routes.get('/more-info/:id', async (req, res) => {
-    console.log('triggered each movie => ' + req.url.split('/')[2]);
     let movieData = await mongomodels.movieMainPageSchema.aggregate(
         [
             {
